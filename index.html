@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioMaterials Clinical Seminars, Final Orientation, RSDM 5511 Fall 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--au-navy:#003359;--au-navy-deep:#002240;--au-navy-mid:#0a4a75;--au-navy-soft:#336685;--ink:#003359;--ink-mid:#58676e;--ink-soft:#8b949a;--paper:#FFFFFF;--paper-tint:#EEEEEE;--line:#e0e4e6;--surface-card:#FFFFFF;--surface-muted:#f0f2f3;--au-green:#44D62C;--au-green-deep:#38b024;--au-green-pale:#d9f5d5;--au-gray:#A5ACAF;--au-gray-mid:#8b949a;--au-gray-pale:#c5cacc}
+body.dark{--ink:#FFFFFF;--ink-mid:#A5ACAF;--ink-soft:#6F7679;--paper:#002240;--paper-tint:#001a30;--line:#0a4a75;--surface-card:#00304f;--surface-muted:rgba(165,172,175,0.12);background:#001423}
+body.dark .slide--white{background:var(--paper)}body.dark .slide--light{background:var(--paper)}
+body.dark .slide--white h1,body.dark .content-title,body.dark .metric-big,body.dark .metric-label,body.dark .req-label,body.dark .pcard-name,body.dark .key-text strong,body.dark .tc-value,body.dark .title-kicker,body.dark .content-body strong,body.dark .s-info-text strong,body.dark .pcard p strong,body.dark .content-statement,body.dark .srow-topic,body.dark .srow-week,body.dark .center-title,body.dark .center-sub strong{color:var(--ink)}
+body.dark .s-info-text,body.dark .req-desc,body.dark .pcard p,body.dark .key-text,body.dark .content-sub,body.dark .content-body,body.dark .srow-time,body.dark .srow-who,body.dark .center-sub,body.dark .center-body{color:var(--ink-mid)}
+body.dark .tc-label,body.dark .event-ribbon,body.dark .metric-sub,body.dark .srow-quiz{color:var(--ink-soft)}
+body.dark .metric-card,body.dark .s-info,body.dark .pcard,body.dark .key-card,body.dark .srow{background:var(--surface-card);border-color:rgba(165,172,175,0.15);box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+body.dark .title-credentials{border-top-color:var(--line)}body.dark .content-title em{color:var(--au-green)}body.dark .content-statement{border-left-color:var(--au-green)}
+body.dark .slide--navy{background:#000d18;color:#FFFFFF}
+body.dark .slide--navy .chrome-top{background:var(--au-green)}
+body.dark .slide--navy h2{color:#FFFFFF}body.dark .slide--navy h2 em{color:var(--au-green)}
+body.dark .slide--navy .section-kicker{color:var(--au-green)}body.dark .slide--navy .section-kicker::before{background:var(--au-green)}
+body.dark .slide--navy .key-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+body.dark .slide--navy .key-text{color:rgba(255,255,255,.8)}body.dark .slide--navy .key-text strong{color:#fff}
+body.dark .slide--navy .key-num{color:var(--au-green)}
+body.dark .sched-divider{background:var(--paper-tint);border-color:var(--line)}body.dark .sched-divider span{color:var(--ink)}
+body.dark .center-label{color:var(--au-green)}body.dark .center-label::before{background:var(--au-green)}
+body.dark .center-title{color:var(--ink)}body.dark .center-sub strong{color:var(--ink)}body.dark .center-body strong{color:var(--ink)}
+body.dark .slide-kicker{color:var(--au-green)}body.dark .slide-kicker::before{background:var(--au-green)}
+body.dark .s-info-label{color:var(--au-green)}
+body.dark .pcard-brand{color:var(--au-green)}
+body.dark .req-label{color:var(--ink)}body.dark .req-dot{background:var(--au-green)}
+body.dark .sched-week-label{color:var(--au-green)}body.dark .sched-week-label::before{background:var(--au-green)}body.dark .sched-week-label .wdate{color:var(--ink-soft)}
+body.dark .srow-topic{color:var(--ink)}body.dark .srow.exam-row .srow-topic{color:var(--ink)}
+body.dark .step-text{color:var(--ink-mid)}body.dark .step-text strong{color:var(--ink)}body.dark .step-num{color:var(--au-green)}
+body.dark .nav-controls{background:rgba(0,15,28,.95);border-color:rgba(68,214,44,.25)}
+*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;overflow:hidden;background:var(--au-navy-deep)}
+body{font-family:"Source Sans 3",system-ui,sans-serif;color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+.deck{position:relative;width:100vw;height:100vh;overflow:hidden}
+.slide{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:var(--paper);visibility:hidden;opacity:0;pointer-events:none;z-index:1;overflow-y:auto}
+.slide.prev{visibility:visible;opacity:1;pointer-events:none;z-index:2}.slide.active{visibility:visible;opacity:1;pointer-events:auto;z-index:3;transition:opacity .5s ease}.slide.entering{opacity:0}
+.slide-inner{width:100%;height:100%;max-width:1440px;margin:0 auto;padding:72px 96px 96px;display:flex;flex-direction:column;position:relative}
+.chrome-top{position:absolute;top:0;left:0;right:0;height:6px;background:var(--au-green);z-index:5}
+.event-ribbon{position:absolute;top:28px;right:48px;font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:.22em;color:var(--ink-soft);font-weight:600;text-transform:uppercase;padding-right:clamp(44px,5vw,60px)}
+.event-ribbon .dot{display:inline-block;width:5px;height:5px;background:var(--au-green);border-radius:50%;margin:0 10px;vertical-align:middle}
+.slide-kicker{font-family:"Montserrat",sans-serif;font-size:11px;letter-spacing:.22em;color:var(--au-green-deep);font-weight:700;text-transform:uppercase;display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.slide-kicker::before{content:"";width:48px;height:2px;background:var(--au-green)}
+.slide--white{background:var(--paper-tint)}.slide--light{background:var(--paper-tint)}
+.slide--navy{background:var(--au-navy);color:#FFFFFF}
+.slide--navy .chrome-top{background:var(--au-green)}.slide--navy .slide-inner{justify-content:center}
+.title-kicker{font-family:"Source Sans 3",sans-serif;font-style:italic;font-size:20px;color:var(--au-navy);letter-spacing:.02em;font-weight:400;margin-bottom:28px;display:flex;align-items:center;gap:16px}
+.title-kicker::before{content:"";width:56px;height:2px;background:var(--au-green);display:inline-block}
+.slide--white h1{font-family:"Montserrat",sans-serif;font-size:clamp(54px,6.5vw,108px);font-weight:700;line-height:.98;color:var(--au-navy);letter-spacing:-.025em;margin-bottom:16px}
+.slide--white h1 .sub{display:block;font-size:.42em;font-weight:500;color:var(--au-navy-mid);letter-spacing:-.01em;margin-top:12px}
+.title-credentials{margin-top:48px;padding-top:32px;border-top:1px solid var(--line);display:flex;gap:56px;flex-wrap:wrap}
+.tc-block{display:flex;flex-direction:column;gap:6px}.tc-label{font-family:"Montserrat",sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.22em;color:var(--ink-soft);font-weight:600}.tc-value{font-size:17px;color:var(--au-navy);font-weight:500}.tc-value.bold{font-weight:700}
+.content-title{font-family:"Montserrat",sans-serif;font-size:clamp(36px,4.5vw,50px);font-weight:700;color:var(--au-navy);line-height:1.08;letter-spacing:-.015em;margin-bottom:6px}.content-title em{font-family:"Source Sans 3",sans-serif;font-style:italic;font-weight:300;color:var(--au-navy-mid)}
+.content-sub{font-size:clamp(18px,2.2vw,22px);color:var(--ink-mid);line-height:1.65;margin-bottom:28px;max-width:85%}
+.content-body{font-size:clamp(18px,2.2vw,22px);color:var(--ink);line-height:1.65;margin-bottom:22px;max-width:85%}.content-body strong{color:var(--au-navy);font-weight:700}
+.content-statement{font-family:"Montserrat",sans-serif;font-size:clamp(18px,2.2vw,24px);font-weight:700;color:var(--au-navy);line-height:1.4;border-left:3px solid var(--au-green);padding:8px 0 8px 20px;margin:20px 0;max-width:80%}
+/* Centered slide (like the PDF's full-slide centered layout) */
+.center-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;flex:1}
+.center-title{font-family:"Montserrat",sans-serif;font-size:clamp(42px,5vw,72px);font-weight:700;color:var(--au-navy);letter-spacing:-.02em;line-height:1.05;margin-bottom:16px}
+.center-sub{font-size:clamp(18px,2.2vw,24px);color:var(--ink-mid);line-height:1.65;max-width:780px;margin:0 auto}
+.center-sub strong{color:var(--au-navy);font-weight:700}
+.center-body{font-size:clamp(16px,1.8vw,20px);color:var(--ink-mid);line-height:1.7;max-width:700px;margin:16px auto 0}
+.center-label{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--au-green-deep);margin-bottom:24px;display:flex;align-items:center;gap:10px;justify-content:center}
+.center-label::before{content:"";width:32px;height:2px;background:var(--au-green)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}.info-grid.triple{grid-template-columns:1fr 1fr 1fr}
+.s-info{background:var(--surface-card);border:1px solid var(--line);padding:24px 28px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.s-info::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--au-green);transform:scaleX(0);transform-origin:left;transition:transform .4s}.slide.active .s-info::before{transform:scaleX(1);transition-delay:.5s}
+.s-info:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,30,54,.06)}
+.s-info-label{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:var(--au-green-deep);margin-bottom:10px}
+.s-info-text{font-size:clamp(15px,1.8vw,18px);color:var(--ink-mid);line-height:1.6}.s-info-text strong{color:var(--au-navy);font-weight:700}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:20px 0}
+.metric-card{background:var(--surface-card);border:1px solid var(--line);padding:28px 22px 22px;position:relative;overflow:hidden;text-align:center;transition:transform .3s,box-shadow .3s}
+.metric-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--au-green);transform:scaleX(0);transform-origin:left;transition:transform .4s}.slide.active .metric-card::before{transform:scaleX(1);transition-delay:.5s}
+.metric-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,30,54,.07)}
+.metric-big{font-family:"Montserrat",sans-serif;font-size:clamp(40px,5vw,56px);font-weight:700;color:var(--au-navy);line-height:1;letter-spacing:-.03em;margin-bottom:4px}
+.metric-label{font-family:"Montserrat",sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid);font-weight:600}
+.metric-sub{font-size:13px;color:var(--ink-soft);margin-top:4px;font-style:italic}
+.pcard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.pcard{background:var(--surface-card);border:1px solid var(--line);padding:22px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--au-navy);transform:scaleX(0);transform-origin:left;transition:transform .4s}.pcard.accent::before{background:var(--au-green)}.slide.active .pcard::before{transform:scaleX(1);transition-delay:.6s}
+.pcard:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,30,54,.07)}
+.pcard-name{font-family:"Montserrat",sans-serif;font-size:clamp(16px,1.8vw,20px);font-weight:700;color:var(--au-navy);margin-bottom:2px}
+.pcard-brand{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--au-green-deep);margin-bottom:10px}
+.pcard p{font-size:clamp(13px,1.5vw,16px);color:var(--ink-mid);line-height:1.55}.pcard p strong{color:var(--au-navy)}
+.pcard-stat{display:flex;align-items:baseline;gap:6px;margin-bottom:10px}.pcard-stat-num{font-family:"Montserrat",sans-serif;font-size:28px;font-weight:800;color:var(--au-navy);line-height:1}.pcard-stat-label{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+body.dark .pcard-stat-num{color:var(--ink)}body.dark .pcard-stat-label{color:var(--ink-soft)}
+.key-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.key-card{background:var(--surface-card);border:1px solid var(--line);border-left:4px solid var(--au-green);padding:20px 24px;display:flex;gap:14px;align-items:flex-start;transition:transform .3s,box-shadow .3s}
+.key-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,30,54,.06)}
+.key-num{font-family:"Montserrat",sans-serif;font-size:22px;font-weight:800;color:var(--au-green-deep);flex-shrink:0;min-width:24px}
+.key-text{font-size:clamp(15px,1.8vw,18px);color:var(--ink-mid);line-height:1.55}.key-text strong{color:var(--au-navy);font-weight:700}
+.slide--navy .section-kicker{font-family:"Montserrat",sans-serif;font-size:12px;letter-spacing:.26em;color:var(--au-green);font-weight:700;text-transform:uppercase;margin-bottom:40px;display:flex;align-items:center;gap:16px}
+.slide--navy .section-kicker::before{content:"";width:64px;height:2px;background:var(--au-green)}
+.slide--navy h2{font-family:"Montserrat",sans-serif;font-size:clamp(48px,5.5vw,86px);font-weight:700;line-height:1.05;letter-spacing:-.02em;max-width:900px;color:#FFFFFF}
+.slide--navy h2 em{font-family:"Source Sans 3",sans-serif;font-style:italic;font-weight:300;color:var(--au-green)}
+.closing-email{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:600;color:var(--au-green-deep);letter-spacing:.06em}
+.closing-thankyou{font-size:16px;color:var(--ink-soft);margin-top:8px}
+body.dark .slide--navy .closing-email{color:var(--au-green)}
+body.dark .slide--navy .closing-thankyou{color:rgba(255,255,255,.5)}
+/* Sleek closing slide */
+.closing-kicker{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--au-green);display:flex;align-items:center;gap:16px;margin-bottom:36px}
+.closing-kicker::before{content:"";width:48px;height:2px;background:var(--au-green)}
+.closing-title{font-family:"Montserrat",sans-serif;font-size:clamp(54px,7.5vw,104px);font-weight:700;font-style:normal;letter-spacing:-.03em;line-height:.95;color:#fff}
+.closing-line{width:64px;height:3px;background:var(--au-green);margin:32px 0 0}
+.closing-meta{display:flex;gap:64px;flex-wrap:wrap;margin-top:36px}
+.cm-block{display:flex;flex-direction:column;gap:5px}
+.cm-label{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--au-green)}
+.cm-value{font-family:"Source Sans 3",sans-serif;font-size:16px;font-weight:500;color:rgba(255,255,255,.92)}
+.au-shield{position:fixed;top:16px;right:20px;z-index:50;width:clamp(36px,4vw,50px);height:auto;pointer-events:none}
+/* Schedule rows */
+.sched-scroll{overflow-y:auto;flex:1;margin-top:12px;padding-right:8px}
+.sched-divider{background:var(--paper-tint);border:1px solid var(--line);border-radius:4px;padding:8px 20px;margin:10px 0 6px;text-align:center}
+.sched-divider span{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--au-navy)}
+.sched-week-label{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--au-green-deep);margin:14px 0 6px;display:flex;align-items:center;gap:10px}
+.sched-week-label::before{content:"";width:24px;height:2px;background:var(--au-green)}
+.sched-week-label .wdate{font-weight:600;color:var(--ink-soft);letter-spacing:.1em;margin-left:auto;font-size:10px}
+.srow{display:grid;grid-template-columns:148px 1fr 200px;gap:8px;align-items:center;padding:8px 16px;background:var(--surface-card);border:1px solid var(--line);border-radius:4px;margin-bottom:4px;transition:transform .15s,box-shadow .15s}
+.srow:hover{transform:translateX(4px);box-shadow:0 4px 12px rgba(0,30,54,.05)}
+.srow-time{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;color:var(--ink-mid)}
+.srow-center{display:flex;align-items:center;gap:8px;min-width:0}
+.srow-topic{font-family:"Source Sans 3",sans-serif;font-size:15px;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.srow-who{font-family:"Source Sans 3",sans-serif;font-size:13px;color:var(--ink-mid);text-align:right;line-height:1.3}
+.srow.exam-row{border-left:3px solid var(--au-green)}
+.srow.exam-row .srow-topic{font-family:"Montserrat",sans-serif;font-weight:700;color:var(--au-navy)}
+.exam-pill{display:inline-block;font-family:"Montserrat",sans-serif;font-weight:700;font-size:8px;letter-spacing:.8px;text-transform:uppercase;background:var(--au-green);color:var(--au-navy-deep);padding:2px 8px;border-radius:3px}
+.new-pill{display:inline-block;font-family:"Montserrat",sans-serif;font-weight:800;font-size:7px;letter-spacing:1px;text-transform:uppercase;background:var(--au-green);color:var(--au-navy-deep);padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;flex-shrink:0}
+/* Compact grade scale */
+.gscale{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}
+.gscale-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface-card);border:1px solid var(--line);border-radius:8px}
+.gscale-badge{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:"Montserrat",sans-serif;font-weight:800;font-size:18px;flex-shrink:0;color:#fff}
+.gscale-badge.gb-a{background:var(--au-navy)}
+.gscale-badge.gb-a span{color:var(--au-green)}
+.gscale-badge.gb-b{background:var(--au-navy)}
+.gscale-badge.gb-c{background:var(--au-navy-mid)}
+.gscale-badge.gb-f{background:var(--au-gray);color:var(--au-navy)}
+.gscale-text{display:flex;flex-direction:column;gap:1px;min-width:0}
+.gscale-grade{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.gscale-range{font-family:"Montserrat",sans-serif;font-size:13.5px;font-weight:600;color:var(--au-navy);white-space:nowrap}
+body.dark .gscale-range{color:var(--ink)}
+/* Grade distribution donut */
+.donut-wrap{display:flex;align-items:center;justify-content:center;gap:clamp(32px,6vw,80px);margin-top:24px;flex-wrap:wrap}
+.donut{position:relative;width:240px;height:240px;flex-shrink:0}
+.donut svg{transform:rotate(-90deg)}
+.donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.donut-center .dc-num{font-family:"Montserrat",sans-serif;font-size:40px;font-weight:800;color:var(--au-navy);line-height:1}
+body.dark .donut-center .dc-num{color:var(--ink)}
+.donut-center .dc-label{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.donut-seg{transition:stroke-dasharray .9s cubic-bezier(.22,1,.36,1)}
+.donut-legend{display:flex;flex-direction:column;gap:14px}
+.dleg{display:flex;align-items:center;gap:14px}
+.dleg-dot{width:14px;height:14px;border-radius:3px;flex-shrink:0}
+.dleg-text{display:flex;flex-direction:column;gap:1px}
+.dleg-name{font-family:"Montserrat",sans-serif;font-size:15px;font-weight:700;color:var(--au-navy)}
+body.dark .dleg-name{color:var(--ink)}
+.dleg-meta{font-family:"Source Sans 3",sans-serif;font-size:13px;color:var(--ink-mid)}
+.dleg-pct{font-family:"Montserrat",sans-serif;font-size:24px;font-weight:800;color:var(--au-navy);margin-left:auto;min-width:78px;text-align:right}
+body.dark .dleg-pct{color:var(--ink)}
+.dleg-sub{display:flex;flex-wrap:wrap;gap:4px 14px;margin:2px 0 2px 28px}
+.dleg-chip{display:flex;align-items:center;gap:6px;font-family:"Source Sans 3",sans-serif;font-size:11.5px;color:var(--ink-mid)}
+.dleg-chip i{width:9px;height:9px;border-radius:2px;flex-shrink:0;display:inline-block}
+.dleg-chip b{font-family:"Montserrat",sans-serif;font-weight:700;color:var(--au-navy);font-style:normal}
+body.dark .dleg-chip b{color:var(--ink)}
+.dleg-group{display:flex;flex-direction:column;gap:3px;margin-bottom:13px}
+/* Numbered step list */
+.ptable{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:6px}
+.ptable-head{display:grid;grid-template-columns:1.4fr 2fr 0.7fr 0.9fr;gap:12px;padding:8px 20px;background:var(--au-navy);color:#fff;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ptable-head span:nth-child(3),.ptable-head span:nth-child(4){text-align:right}
+.ptable-group{padding:5px 20px;background:var(--surface-muted);font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--au-green-deep)}
+.prow{display:grid;grid-template-columns:1.4fr 2fr 0.7fr 0.9fr;gap:12px;padding:5px 20px;border-top:1px solid var(--line);align-items:center;background:var(--surface-card)}
+.prow>span:first-child{font-family:"Montserrat",sans-serif;font-weight:600;font-size:13px;color:var(--au-navy)}
+.prow .pdetail{font-size:12.5px;color:var(--ink-mid)}
+.prow .ppts{text-align:right;font-family:"Montserrat",sans-serif;font-weight:700;font-size:13px;color:var(--au-navy)}
+.prow .pwt{text-align:right;font-family:"Montserrat",sans-serif;font-weight:600;font-size:12.5px;color:var(--au-navy-mid)}
+.prow.ptotal{background:var(--au-green-pale);border-top:2px solid var(--au-green)}
+.prow.ptotal>span:first-child,.prow.ptotal .ppts,.prow.ptotal .pwt{color:var(--au-navy);font-weight:800}
+body.dark .prow>span:first-child,body.dark .prow .ppts,body.dark .prow .pwt{color:var(--ink)}
+body.dark .prow .pdetail{color:var(--ink-mid)}
+body.dark .ptable-group{color:var(--au-green)}
+body.dark .prow.ptotal{background:rgba(68,214,44,.12)}
+body.dark .prow.ptotal>span:first-child,body.dark .prow.ptotal .ppts,body.dark .prow.ptotal .pwt{color:var(--ink)}
+/* Numbered step list */
+.step-list{display:flex;flex-direction:column;gap:0;margin:16px 0;max-width:600px}
+.step-item{display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:"Montserrat",sans-serif;font-size:13px;font-weight:800;color:var(--au-green-deep);flex-shrink:0;min-width:20px}
+.step-text{font-size:17px;color:var(--ink-mid);line-height:1.45}.step-text strong{color:var(--au-navy);font-weight:600}
+/* Req grid from RSID template */
+.req-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 24px}
+.req-item{display:flex;gap:12px;align-items:flex-start;padding:10px 8px;border-radius:4px}.req-item:hover{background:var(--surface-muted)}
+.req-dot{width:7px;height:7px;border-radius:50%;background:var(--au-green);flex-shrink:0;margin-top:8px}
+.req-label{font-family:"Montserrat",sans-serif;font-size:clamp(14px,1.7vw,17px);font-weight:700;color:var(--au-navy);margin-bottom:3px}
+.req-desc{font-size:clamp(14px,1.6vw,16px);color:var(--ink-mid);line-height:1.5}
+.reveal{opacity:0;transform:translateY(16px)}.slide.active .reveal{animation:revealUp .7s cubic-bezier(.22,1,.36,1) forwards}
+.slide.active .reveal.d1{animation-delay:.1s}.slide.active .reveal.d2{animation-delay:.2s}.slide.active .reveal.d3{animation-delay:.32s}.slide.active .reveal.d4{animation-delay:.44s}.slide.active .reveal.d5{animation-delay:.56s}
+@keyframes revealUp{to{opacity:1;transform:translateY(0)}}
+.nav-controls{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:rgba(0,30,54,.92);border:1px solid rgba(68,214,44,.3);border-radius:100px;padding:8px 12px;z-index:100;backdrop-filter:blur(8px);box-shadow:0 8px 24px rgba(0,30,54,.25)}
+.nav-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;color:#f2f4f5;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:"Montserrat",sans-serif;font-weight:700;font-size:16px;transition:background .2s,transform .2s}
+.nav-btn:hover{background:rgba(68,214,44,.2)}.nav-btn:active{transform:scale(.94)}
+.nav-dots{display:flex;gap:6px;padding:0 8px}
+.nav-dot{width:7px;height:7px;border-radius:50%;background:rgba(165,172,175,.4);cursor:pointer;transition:background .25s,transform .25s;border:none;padding:0}
+.nav-dot:hover{background:var(--au-gray)}.nav-dot.active{background:var(--au-green);transform:scale(1.4)}
+.nav-counter{font-family:"Montserrat",sans-serif;font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.7);font-weight:600;padding:0 8px;min-width:52px;text-align:center}.nav-counter .current{color:var(--au-green);font-weight:700}
+.fs-btn,.theme-btn{position:fixed;bottom:28px;width:32px;height:32px;border:none;border-radius:50%;background:rgba(0,30,54,.35);color:rgba(255,255,255,.55);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;z-index:99;transition:background .25s,color .25s,opacity .25s;opacity:.5;backdrop-filter:blur(6px)}
+.fs-btn{right:28px}.theme-btn{right:68px}
+.fs-btn:hover,.theme-btn:hover{background:rgba(0,30,54,.85);color:var(--au-green);opacity:1}
+.fs-btn svg,.theme-btn svg{display:block}
+body.dark .fs-btn,body.dark .theme-btn{background:rgba(255,255,255,.08);color:rgba(255,255,255,.65)}
+body.dark .fs-btn:hover,body.dark .theme-btn:hover{background:rgba(255,255,255,.18);color:var(--au-green)}
+.theme-btn .sun{display:none}body.dark .theme-btn .sun{display:block}body.dark .theme-btn .moon{display:none}
+@media(max-width:1000px){.slide-inner{padding:48px 40px 72px}.info-grid,.key-grid,.req-grid{grid-template-columns:1fr}.pcard-grid{grid-template-columns:1fr 1fr}.info-grid.triple{grid-template-columns:1fr}.srow{grid-template-columns:140px 1fr 120px}}
+/* Embedded grade simulator */
+.gs-card{max-width:620px;margin:14px auto 0;width:100%;background:var(--surface-card);border:1px solid var(--line);border-radius:10px;border-top:3px solid var(--au-green);overflow:hidden;box-shadow:0 2px 8px rgba(0,51,89,.1)}
+.gs-head{background:var(--au-navy);padding:14px 20px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start}
+.gs-head h3{font-family:"Montserrat",sans-serif;font-size:16px;font-weight:600;letter-spacing:-.2px;margin:0}
+.gs-head .gs-sub{font-size:11px;color:var(--au-gray)}
+.gs-grade{text-align:right}
+.gs-letter{font-family:"Montserrat",sans-serif;font-size:34px;font-weight:800;line-height:1;color:var(--au-green)}
+.gs-pct{font-size:11px;color:var(--au-gray);font-weight:600}
+.gs-tabs{display:flex;background:var(--au-navy-deep);padding:0 8px;gap:2px}
+.gs-tab{flex:1;padding:8px 4px;font-family:"Inter","Source Sans 3",sans-serif;font-size:10.5px;font-weight:600;color:var(--au-gray);background:transparent;border:none;cursor:pointer;text-align:center;transition:color .15s}
+.gs-tab:hover{color:#fff}
+.gs-tab.active{color:var(--au-navy);background:var(--surface-card);border-radius:6px 6px 0 0}
+body.dark .gs-tab.active{color:var(--ink)}
+.gs-body{padding:14px 20px}
+.gs-sec{margin-bottom:12px}
+.gs-sec-title{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--au-green-deep);padding-bottom:5px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.gs-table{width:100%;border-collapse:collapse}
+.gs-table td{padding:4px 0;vertical-align:middle}
+.gs-table td:first-child{font-family:"Source Sans 3",sans-serif;font-size:13px;font-weight:500;color:var(--ink)}
+.gs-table td:nth-child(2){width:64px;text-align:center}
+.gs-table td:nth-child(3){width:38px;text-align:center;color:var(--ink-soft);font-size:12px}
+.gs-table td:last-child{width:56px;text-align:right;color:var(--au-navy-mid);font-weight:600;font-size:12px;font-family:"Montserrat",sans-serif}
+body.dark .gs-table td:last-child{color:var(--au-gray)}
+.gs-input{width:100%;padding:5px 4px;border:1px solid var(--line);border-radius:4px;font-family:"Inter","Source Sans 3",sans-serif;font-size:13px;font-weight:600;text-align:center;color:var(--ink);background:var(--surface-card)}
+.gs-input:focus{outline:none;border-color:var(--au-navy);box-shadow:0 0 0 2px var(--surface-muted)}
+.gs-input:disabled{background:var(--surface-muted);color:var(--ink);cursor:default}
+.gs-excused{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface-muted);border-radius:6px;margin-top:8px}
+.gs-excused label{font-family:"Source Sans 3",sans-serif;font-size:12px;font-weight:500;color:var(--ink)}
+.gs-excused input{width:54px;padding:5px;border:1px solid var(--line);border-radius:4px;font-family:"Inter","Source Sans 3",sans-serif;font-size:13px;font-weight:600;text-align:center;background:var(--surface-card);color:var(--ink)}
+.gs-actions{display:flex;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.gs-actions.gs-hidden{display:none}
+.gs-btn{flex:1;padding:8px;border-radius:5px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:background .15s}
+.gs-btn-primary{background:var(--au-navy);color:#fff;border:none}
+.gs-btn-primary:hover{background:var(--au-navy-mid)}
+.gs-btn-secondary{background:var(--surface-card);color:var(--au-navy);border:1px solid var(--line)}
+body.dark .gs-btn-secondary{color:var(--ink)}
+.gs-btn-secondary:hover{background:var(--surface-muted)}
+/* Why this course matters - testimonial slide */
+.why-wrap{display:grid;grid-template-columns:1fr auto;gap:clamp(32px,5vw,72px);align-items:center;flex:1}
+.why-left{max-width:560px}
+.why-quote{font-family:"Montserrat",sans-serif;font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--au-navy);line-height:1.18;letter-spacing:-.015em;margin:6px 0 22px}
+.why-quote em{font-family:"Source Sans 3",sans-serif;font-style:italic;font-weight:300;color:var(--au-navy-mid)}
+.why-body{font-size:clamp(16px,1.9vw,20px);color:var(--ink-mid);line-height:1.62;margin-bottom:22px}
+.why-body strong{color:var(--au-navy);font-weight:700}
+.why-attrib{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--line)}
+.why-attrib .wa-mark{font-family:"Montserrat",sans-serif;font-size:34px;font-weight:800;color:var(--au-green-deep);line-height:.8}
+.why-attrib .wa-text{display:flex;flex-direction:column;gap:2px}
+.why-attrib .wa-who{font-family:"Montserrat",sans-serif;font-size:13px;font-weight:700;color:var(--au-navy);letter-spacing:.02em}
+.why-attrib .wa-role{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+body.dark .why-quote,body.dark .why-body strong,body.dark .why-attrib .wa-who{color:var(--ink)}
+body.dark .why-body{color:var(--ink-mid)}
+body.dark .why-quote em{color:var(--au-green)}
+body.dark .why-attrib{border-top-color:var(--line)}
+/* iPhone */
+.iphone{width:300px;height:640px;background:#fff;border-radius:44px;position:relative;box-shadow:0 0 0 10px #1a1a1c,0 0 0 12px #2c2c2e,0 26px 60px rgba(0,30,54,.28);overflow:hidden;display:flex;flex-direction:column;flex-shrink:0}
+body.dark .iphone{box-shadow:0 0 0 10px #000,0 0 0 12px #14181c,0 26px 60px rgba(0,0,0,.5)}
+.ip-island{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:98px;height:27px;background:#000;border-radius:16px;z-index:50}
+.ip-status{height:44px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 5px;font-family:-apple-system,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;font-weight:600;color:#000;flex-shrink:0}
+.ip-status .ip-right{display:flex;align-items:center;gap:5px}
+.ip-nav{display:flex;flex-direction:column;align-items:center;padding:2px 0 8px;border-bottom:.5px solid #e2e2e5;background:rgba(249,249,249,.96);position:relative;flex-shrink:0}
+.ip-nav .ip-back{position:absolute;left:12px;top:6px;color:#007aff;display:flex;align-items:center;font-size:22px;line-height:1}
+.ip-nav .ip-back .ip-badge{font-family:-apple-system,"SF Pro Text",Helvetica,Arial,sans-serif;font-size:13px;font-weight:500;margin-left:1px;background:#007aff;color:#fff;border-radius:9px;padding:0 5px;position:relative;top:-1px}
+.ip-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(160deg,#b0b4bd,#7d828d);display:flex;align-items:center;justify-content:center;color:#fff;font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:18px;font-weight:500;margin-bottom:3px}
+.ip-name{font-family:-apple-system,"SF Pro Text",Helvetica,Arial,sans-serif;font-size:12px;color:#000;display:flex;align-items:center;gap:3px;font-weight:400}
+.ip-convo{flex:1;overflow-y:auto;padding:10px 12px 6px;display:flex;flex-direction:column;gap:2px;background:#fff;font-family:-apple-system,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;scrollbar-width:none}
+.ip-convo::-webkit-scrollbar{display:none}
+.ip-ts{text-align:center;font-size:10px;color:#8e8e93;margin:9px 0 5px;font-weight:500}
+.ip-ts:first-child{margin-top:2px}
+.ip-ts .d{font-weight:600;color:#86868b}
+.ip-row{display:flex;margin:1px 0}
+.ip-row.rcv{justify-content:flex-start}.ip-row.snt{justify-content:flex-end}
+.ip-bub{max-width:76%;padding:8px 12px;font-size:14.5px;line-height:1.34;border-radius:18px;position:relative;word-wrap:break-word;white-space:pre-wrap}
+.ip-bub.rcv{background:#e9e9eb;color:#000;border-bottom-left-radius:5px}
+.ip-bub.rcv::before{content:"";position:absolute;left:-5px;bottom:0;width:16px;height:16px;background:#e9e9eb;border-bottom-right-radius:14px;z-index:-1;-webkit-mask:radial-gradient(circle at top left,transparent 11px,#000 11px);mask:radial-gradient(circle at top left,transparent 11px,#000 11px)}
+.ip-bub.snt{background:#007aff;color:#fff;border-bottom-right-radius:5px}
+.ip-bub.snt::before{content:"";position:absolute;right:-5px;bottom:0;width:16px;height:16px;background:#007aff;border-bottom-left-radius:14px;z-index:-1;-webkit-mask:radial-gradient(circle at top right,transparent 11px,#000 11px);mask:radial-gradient(circle at top right,transparent 11px,#000 11px)}
+.ip-input{display:flex;align-items:center;gap:8px;padding:7px 12px 5px;border-top:.5px solid #e2e2e5;flex-shrink:0;background:#fff}
+.ip-plus{width:29px;height:29px;border-radius:50%;background:#e9e9eb;color:#636366;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;font-family:-apple-system,Helvetica,Arial,sans-serif}
+.ip-field{flex:1;border:.5px solid #d1d1d6;border-radius:16px;padding:6px 12px;font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:14px;color:#b0b0b5;display:flex;justify-content:space-between;align-items:center}
+.ip-home{width:118px;height:4px;background:#000;border-radius:3px;margin:5px auto 7px;flex-shrink:0}
+@media (max-width:1100px){.why-wrap{grid-template-columns:1fr;justify-items:center;text-align:center}.why-attrib{justify-content:center}.iphone{transform:scale(.88)}}
+/* Flip cards - respect + time */
+.flip-intro{font-size:clamp(15px,1.7vw,18px);color:var(--ink-mid);line-height:1.55;max-width:70%;margin-bottom:20px}
+.flip-intro .fi-cue{display:inline-flex;align-items:center;gap:5px;color:var(--au-green-deep);font-weight:600;white-space:nowrap}
+.flip-intro .fi-cue svg{width:14px;height:14px;position:relative;top:2px}
+.flip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;flex:1;min-height:0;max-height:560px}
+.flip-card{perspective:1800px;cursor:pointer;min-height:0}
+.flip-inner{position:relative;width:100%;height:100%;min-height:340px;transition:transform .7s cubic-bezier(.34,1.32,.36,1);transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);background:var(--surface-card);display:flex;flex-direction:column;overflow:hidden;border-radius:2px;box-shadow:0 6px 22px rgba(0,30,54,.06);transition:box-shadow .3s,transform .3s}
+.flip-card:hover .flip-face{box-shadow:0 14px 36px rgba(0,30,54,.12)}
+/* FRONT */
+.flip-front{padding:30px 30px 24px}
+.ff-top{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.ff-num{font-family:"Montserrat",sans-serif;font-size:15px;font-weight:800;letter-spacing:.04em;color:var(--au-green-deep);flex-shrink:0}
+.ff-rule{flex:1;height:2px;background:linear-gradient(90deg,var(--au-green),transparent)}
+.ff-eyebrow{font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);flex-shrink:0}
+.ff-title{font-family:"Montserrat",sans-serif;font-size:clamp(22px,2.3vw,29px);font-weight:700;color:var(--au-navy);line-height:1.12;letter-spacing:-.018em;margin:0 0 14px}
+.ff-title em{font-family:"Source Sans 3",sans-serif;font-style:italic;font-weight:300;color:var(--au-navy-mid)}
+.ff-tag{font-size:clamp(14px,1.55vw,16.5px);color:var(--ink-mid);line-height:1.5;font-style:italic;margin-bottom:auto}
+.ff-foot{display:flex;align-items:center;justify-content:space-between;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.ff-foot .fff-label{font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--au-green-deep)}
+.ff-foot .fff-icon{width:26px;height:26px;border-radius:50%;background:var(--au-green-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ff-foot .fff-icon svg{width:13px;height:13px;stroke:var(--au-green-deep)}
+body.dark .ff-foot .fff-icon{background:rgba(68,214,44,.14)}
+body.dark .ff-foot .fff-icon svg{stroke:var(--au-green)}
+/* BACK */
+.flip-back{transform:rotateY(180deg);background:var(--au-navy);border-color:var(--au-navy);padding:30px 30px 26px;justify-content:center}
+.flip-back::after{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--au-green)}
+.fb-label{font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--au-green);margin-bottom:16px;flex-shrink:0;display:flex;align-items:center;gap:9px}
+.fb-label::before{content:"";width:20px;height:2px;background:var(--au-green)}
+.fb-text{font-size:clamp(13px,1.42vw,15px);color:rgba(255,255,255,.88);line-height:1.62;overflow-y:auto;scrollbar-width:none}
+.fb-text::-webkit-scrollbar{display:none}
+.fb-text strong{color:#fff;font-weight:700}
+.fb-text em{color:var(--au-green);font-style:normal;font-weight:600}
+body.dark .flip-face{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+body.dark .ff-title,body.dark .ff-title em{color:var(--ink)}
+body.dark .flip-back{background:#000d18;border-color:#0a4a75}
+@media (max-width:1000px){.flip-grid{grid-template-columns:1fr;gap:12px}.flip-inner{min-height:180px}.flip-back{justify-content:flex-start}}
+</style>
+<style>
+/* BMCS component layer, built on the course orientation tokens */
+.tiles{display:flex;gap:4px}
+.tiles .t{width:14px;height:14px;border:1px solid var(--line);background:transparent}
+.tiles .t.on{background:var(--au-navy);border-color:var(--au-navy)}
+.tiles .t.up{background:var(--au-green-deep);border-color:var(--au-green-deep)}
+.tiles--xl .t{width:clamp(18px,2.2vw,28px);height:clamp(18px,2.2vw,28px)}
+body.dark .tiles .t.on{background:var(--au-gray);border-color:var(--au-gray)}
+body.dark .tiles .t.up{background:var(--au-green);border-color:var(--au-green)}
+
+.rows{display:flex;flex-direction:column;gap:5px;max-width:1060px}
+.row{display:grid;grid-template-columns:1fr 160px 56px;gap:18px;align-items:center;padding:9px 16px;background:var(--surface-card);border:1px solid var(--line);transition:transform .18s,box-shadow .18s}
+.row:hover{transform:translateX(3px);box-shadow:-3px 0 0 0 var(--au-green)}
+.row-l{font-size:clamp(13.5px,1.4vw,16.5px);color:var(--ink);line-height:1.35}
+.row-n{font-family:"Montserrat",sans-serif;font-weight:700;font-size:14px;color:var(--au-navy);text-align:right}
+.row.up .row-n{color:var(--au-green-deep)}
+body.dark .row-n{color:var(--ink)}
+body.dark .row{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+
+.steps{border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:12px 4px;border-bottom:1px solid var(--line);align-items:baseline}
+.step:hover{background:var(--surface-muted)}
+.step-n{font-family:"Montserrat",sans-serif;font-weight:800;font-size:clamp(19px,2.1vw,26px);color:var(--au-green-deep);line-height:1}
+.step-t{font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(15px,1.6vw,18px);color:var(--au-navy);margin-bottom:2px}
+.step-d{font-size:clamp(14px,1.45vw,17px);color:var(--ink-mid);line-height:1.5}
+body.dark .step-t{color:var(--ink)}
+
+.track{display:grid;grid-template-columns:minmax(140px,5fr) minmax(280px,35fr) minmax(160px,10fr) minmax(160px,10fr) minmax(140px,5fr);gap:5px;margin-top:8px}
+.seg{background:var(--surface-card);border:1px solid var(--line);border-top:4px solid var(--au-navy-soft);padding:16px 14px;display:flex;flex-direction:column;gap:7px}
+.seg--main{border-top-color:var(--au-green)}
+.seg--end{background:var(--au-navy);border-color:var(--au-navy);border-top-color:var(--au-green)}
+.seg--end .seg-t{color:#fff}.seg--end .seg-d{color:rgba(255,255,255,.75)}
+.seg-m{font-family:"Montserrat",sans-serif;font-weight:800;font-size:clamp(17px,1.9vw,24px);color:var(--au-green-deep);line-height:1}
+.seg--end .seg-m{color:var(--au-green)}
+.seg-t{font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(12.5px,1.3vw,15px);color:var(--au-navy);line-height:1.25}
+.seg-d{font-size:clamp(12px,1.2vw,14px);color:var(--ink-mid);line-height:1.45}
+body.dark .seg{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+body.dark .seg-t{color:var(--ink)}
+.axis{display:flex;align-items:center;margin-top:10px;font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.axis i{flex:1;height:1px;background:var(--line);margin:0 14px;display:block}
+
+.strip{display:flex;margin-top:6px}
+.day{flex:1;background:var(--surface-card);border:1px solid var(--line);border-top:4px solid var(--line);padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.day+.day{border-left:none}
+.day--due{border-top-color:var(--au-green)}
+.day--go{border-top-color:var(--au-green);background:var(--au-navy);border-color:var(--au-navy)}
+.day--go .day-t{color:#fff}.day--go .day-d{color:rgba(255,255,255,.78)}.day--go .day-w{color:var(--au-green)}
+.day-w{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.day-t{font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(15px,1.6vw,19px);color:var(--au-navy)}
+.day-d{font-size:clamp(13px,1.3vw,15px);color:var(--ink-mid);line-height:1.45}
+body.dark .day{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+body.dark .day-t{color:var(--ink)}
+
+.tt{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.tt-row{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center}
+.tt-lab{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink-soft);text-align:right}
+.tt-bar{position:relative;height:58px;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.tt-fill{position:absolute;top:17px;height:24px;display:flex;align-items:center;padding:0 13px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;color:#fff;white-space:nowrap;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.22,1,.36,1) .4s}
+.slide.active .tt-fill{transform:scaleX(1)}
+.tt-fill.a{background:var(--au-gray-mid)}
+.tt-fill.b{background:var(--au-navy)}
+.tt-pt{position:absolute;top:0;width:1px;height:100%;background:var(--line)}
+.tt-pt span{position:absolute;top:-1px;left:7px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.tt-scale{display:grid;grid-template-columns:110px 1fr;gap:18px}
+.tt-months{display:grid;grid-template-columns:42.5fr 41fr 16.5fr;border-top:1px solid var(--line);padding-top:6px;font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+
+.months{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,32px);margin-top:8px}
+.month-h{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--au-green-deep);padding-bottom:8px;border-bottom:2px solid var(--au-navy);margin-bottom:8px}
+body.dark .month-h{border-bottom-color:var(--au-green)}
+.dline{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);align-items:center}
+.dnum{font-family:"Montserrat",sans-serif;font-weight:800;font-size:19px;color:var(--au-navy);line-height:1}
+.dnum small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--ink-soft);margin-top:3px}
+body.dark .dnum{color:var(--ink)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;padding:5px 10px;background:var(--surface-muted);color:var(--au-navy)}
+.chip--am{box-shadow:inset 3px 0 0 var(--au-green)}
+.chip--pm{box-shadow:inset 3px 0 0 var(--au-navy-mid)}
+.chip--exam{background:var(--au-navy);color:#fff}
+body.dark .chip{color:var(--ink)}
+body.dark .chip--exam{background:var(--au-green);color:#00243F}
+
+.stack{display:flex;height:54px;border:1px solid var(--line);overflow:hidden;margin-top:10px}
+.sseg{display:flex;align-items:center;justify-content:center;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;color:#fff;transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.slide.active .sseg{transform:scaleX(1)}
+.slide.active .sseg:nth-child(2){transition-delay:.12s}.slide.active .sseg:nth-child(3){transition-delay:.24s}.slide.active .sseg:nth-child(4){transition-delay:.36s}
+.sseg.s1{background:var(--au-navy)}.sseg.s2{background:var(--au-navy-mid)}.sseg.s3{background:var(--au-green-deep)}
+.sseg.s4{background:var(--surface-muted);color:var(--ink-soft)}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:12px}
+.lg{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-mid)}
+.lg i{width:11px;height:11px;display:block}
+
+.dbars{display:flex;flex-direction:column;gap:9px}
+.db{display:grid;grid-template-columns:minmax(110px,175px) 1fr 44px;gap:14px;align-items:center}
+.db-n{font-size:14px;color:var(--ink-mid);text-align:right}
+.db-tr{height:14px;background:var(--surface-muted)}
+.db-f{height:100%;background:var(--au-navy-mid);transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.22,1,.36,1) .45s}
+.slide.active .db-f{transform:scaleX(1)}
+.db-f.up{background:var(--au-green-deep)}
+.db-v{font-family:"Montserrat",sans-serif;font-size:13px;font-weight:700;color:var(--au-navy)}
+body.dark .db-v{color:var(--ink)}
+
+.hats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hat{background:var(--surface-card);border:1px solid var(--line);padding:16px 18px;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+.hat-sw{width:32px;height:32px;border-radius:50% 50% 46% 46%/60% 60% 40% 40%;border:1px solid rgba(0,0,0,.14)}
+.hat-w{font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px}
+.hat-r{font-family:"Montserrat",sans-serif;font-weight:700;font-size:15px;color:var(--au-navy);line-height:1.2}
+.hat-d{font-size:13.5px;color:var(--ink-mid);line-height:1.45;margin-top:3px}
+body.dark .hat{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+body.dark .hat-r{color:var(--ink)}
+
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,44px);align-items:start}
+.mini-lab{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--au-green-deep);margin-bottom:12px}
+.foot-note{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-top:10px}
+.kicker-r{margin-left:auto;font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+@media(max-width:1000px){
+  .split,.months,.hats,.track{grid-template-columns:1fr}
+  .strip{flex-direction:column}.day+.day{border-left:1px solid var(--line);border-top:none}
+  .row{grid-template-columns:1fr 90px 46px}
+}
+@media(prefers-reduced-motion:reduce){.tt-fill,.sseg,.db-f{transform:none!important;transition:none!important}}
+
+/* run options (two ways to fit the hats) */
+.runs{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+.run-row{display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:stretch}
+.run-lab{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:800;color:var(--au-navy);display:flex;flex-direction:column;justify-content:center;text-align:right;letter-spacing:-.01em}
+.run-lab span{display:block;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:5px}
+body.dark .run-lab{color:var(--ink)}
+.run-bar{display:grid;gap:4px}
+.rseg{background:var(--surface-card);border:1px solid var(--line);border-top:4px solid var(--au-navy-soft);padding:14px 14px 16px;font-size:clamp(12px,1.25vw,14.5px);color:var(--ink-mid);line-height:1.4;min-height:104px}
+.rseg b{display:block;font-family:"Montserrat",sans-serif;font-weight:800;font-size:clamp(16px,1.8vw,22px);color:var(--au-green-deep);line-height:1;margin-bottom:8px}
+.rseg--main{border-top-color:var(--au-green)}
+.rseg--hats{border-top-color:var(--au-green);background:var(--au-green-pale)}
+.rseg--end{background:var(--au-navy);border-color:var(--au-navy);border-top-color:var(--au-green);color:rgba(255,255,255,.8)}
+.rseg--end b{color:var(--au-green)}
+body.dark .rseg{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+body.dark .rseg--hats{background:rgba(68,214,44,.12)}
+.day--hard{border-top:4px solid var(--au-green);box-shadow:inset 0 -3px 0 var(--au-green)}
+@media(max-width:1000px){.run-bar{grid-template-columns:1fr!important}.run-row{grid-template-columns:1fr}.run-lab{text-align:left}}
+
+/* group roster components */
+.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.tcard{background:var(--surface-card);border:1px solid var(--line);border-top:3px solid var(--au-green);padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;min-height:132px}
+.tcard-n{font-family:"Montserrat",sans-serif;font-weight:800;font-size:15px;color:var(--au-green-deep);letter-spacing:.04em}
+.tcard-t{font-size:clamp(13px,1.35vw,15.5px);color:var(--ink);line-height:1.35;font-weight:600}
+.tcard-f{font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:auto}
+body.dark .tcard{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+
+.gbrowse{display:grid;grid-template-columns:230px 1fr;gap:16px;margin-top:16px;align-items:start}
+.glist{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.gbtn{display:flex;flex-direction:column;gap:2px;align-items:flex-start;padding:9px 11px;background:var(--surface-card);border:1px solid var(--line);cursor:pointer;text-align:left;font-family:"Source Sans 3",sans-serif;transition:border-color .15s,transform .15s}
+.gbtn b{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:800;color:var(--au-navy);line-height:1}
+.gbtn span{font-size:10.5px;color:var(--ink-soft);line-height:1.2}
+.gbtn:hover{transform:translateY(-1px);border-color:var(--au-gray)}
+.gbtn.active{background:var(--au-navy);border-color:var(--au-navy)}
+.gbtn.active b{color:#fff}.gbtn.active span{color:var(--au-green)}
+body.dark .gbtn{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+body.dark .gbtn b{color:var(--ink)}
+body.dark .gbtn.active{background:var(--au-green);border-color:var(--au-green)}
+body.dark .gbtn.active b,body.dark .gbtn.active span{color:#00243F}
+
+.gpanel{background:var(--surface-card);border:1px solid var(--line);border-top:4px solid var(--au-green);padding:22px 26px;min-height:270px}
+body.dark .gpanel{background:var(--surface-card);border-color:rgba(165,172,175,.15);border-top-color:var(--au-green)}
+.gp-num{font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--au-green-deep);margin-bottom:6px}
+.gp-topic{font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(18px,2.1vw,26px);color:var(--au-navy);line-height:1.2;letter-spacing:-.015em}
+body.dark .gp-topic{color:var(--ink)}
+.gp-fac{font-size:15px;color:var(--ink-mid);margin-top:8px}
+.gp-fac strong{color:var(--ink)}
+.gp-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 16px}
+.gp-d{background:var(--surface-muted);padding:11px 14px;font-size:14.5px;color:var(--ink);font-weight:600}
+.gp-d span{display:block;font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:5px}
+.gp-d em{display:block;font-style:normal;font-weight:400;font-size:13px;color:var(--ink-mid);margin-top:2px}
+.gp-d--go{background:var(--au-navy);color:#fff}
+.gp-d--go span{color:var(--au-green)}.gp-d--go em{color:rgba(255,255,255,.75)}
+.gp-names{display:grid;grid-template-columns:repeat(3,1fr);gap:5px 18px;border-top:1px solid var(--line);padding-top:14px}
+.gp-names span{font-size:14px;color:var(--ink-mid);padding-left:12px;position:relative}
+.gp-names span::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--au-green)}
+@media(max-width:1000px){.topic-grid{grid-template-columns:1fr 1fr}.gbrowse{grid-template-columns:1fr}.glist{grid-template-columns:repeat(4,1fr)}.gp-dates,.gp-names{grid-template-columns:1fr}}
+
+/* group panel emphasis: number first, students second, topic third */
+.gp-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;margin-bottom:18px}
+.gp-badge{background:var(--au-navy);color:#fff;border-radius:14px;padding:14px 22px 16px;text-align:center;font-family:"Montserrat",sans-serif;font-weight:800;font-size:clamp(38px,4.4vw,58px);line-height:.9;letter-spacing:-.03em;min-width:110px}
+.gp-badge span{display:block;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--au-green);margin-bottom:8px}
+body.dark .gp-badge{background:var(--au-green);color:#00243F}
+body.dark .gp-badge span{color:rgba(0,36,63,.7)}
+.gp-fac{font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(17px,1.9vw,23px);color:var(--au-navy);margin:0 0 6px;letter-spacing:-.01em}
+body.dark .gp-fac{color:var(--ink)}
+.gp-topic{font-family:"Source Sans 3",sans-serif;font-weight:400;font-size:clamp(14px,1.45vw,17px);color:var(--ink-mid);line-height:1.4;letter-spacing:0}
+.gp-names{display:block;border-top:1px solid var(--line);padding-top:14px}
+.gp-names-lab{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--au-green-deep);margin-bottom:10px}
+.gp-names-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px 22px}
+.gp-names-grid span{font-size:clamp(14px,1.5vw,17px);font-weight:600;color:var(--ink);padding-left:15px;position:relative;line-height:1.3}
+.gp-names-grid span::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--au-green)}
+.gp-dates{margin:0 0 18px}
+.gp-d{font-size:14px}
+@media(max-width:1000px){.gp-names-grid{grid-template-columns:1fr 1fr}.gp-head{grid-template-columns:1fr}}
+
+/* rounded corners across the deck */
+.s-info,.metric-card,.key-card,.pcard,.gs-card,.seg,.rseg,.day,.row,.hat,.gbtn,.gpanel,.stack,.db-tr,.tt-fill,.gp-d,.chip,.exam-pill,.new-pill,.srow,.sched-divider,.sched-week-label,.tcard{border-radius:10px}
+.row,.gbtn,.gp-d,.hat{border-radius:10px}
+.chip,.exam-pill,.new-pill{border-radius:100px}
+.tiles .t{border-radius:3px}
+.stack{border-radius:12px}
+.sseg:first-child{border-radius:12px 0 0 12px}
+.sseg:last-child{border-radius:0 12px 12px 0}
+.db-tr,.db-f{border-radius:100px}
+.tt-fill{border-radius:100px}
+.strip .day:first-child{border-radius:12px 0 0 12px}
+.strip .day:last-child{border-radius:0 12px 12px 0}
+.strip .day{border-radius:0}
+.run-bar .rseg:first-child{border-radius:12px 0 0 12px}
+.run-bar .rseg:last-child{border-radius:0 12px 12px 0}
+.run-bar .rseg{border-radius:0}
+.track .seg{border-radius:12px}
+.gs-input,.gs-excused,.gs-tab.active{border-radius:8px}
+@media(max-width:1000px){.strip .day{border-radius:10px}}
+
+/* pool to groups animation */
+.pool{position:relative;height:clamp(280px,42vh,340px);width:100%;background:var(--surface-muted);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:background .5s}
+.pool.is-grouped{background:transparent;border-color:transparent}
+.pool:focus-visible{outline:2px solid var(--au-green);outline-offset:3px}
+.pchip{position:absolute;top:0;left:0;padding:5px 9px;background:var(--surface-card);border:1px solid var(--line);border-radius:100px;font-family:"Source Sans 3",sans-serif;font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 3px rgba(0,30,54,.06);transition:transform .7s cubic-bezier(.22,1,.36,1),border-radius .4s,border-color .4s,background .4s;will-change:transform}
+.is-grouped .pchip{border-radius:6px;border-color:var(--line);box-shadow:inset 3px 0 0 var(--au-green)}
+body.dark .pchip{background:var(--surface-card);border-color:rgba(165,172,175,.2);color:var(--ink)}
+.pool-head{position:absolute;top:0;left:0;height:24px;display:flex;align-items:center;justify-content:center;background:var(--au-navy);color:#fff;border-radius:6px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:800;letter-spacing:.04em;opacity:0;transform:translate(0,0);transition:opacity .5s ease .5s}
+.is-grouped .pool-head{opacity:1}
+body.dark .pool-head{background:var(--au-green);color:#00243F}
+.pool-foot{display:flex;align-items:center;gap:16px;margin-top:16px}
+.pool-btn{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--au-navy);border:none;border-radius:100px;padding:11px 22px;cursor:pointer;transition:background .2s,transform .15s}
+.pool-btn:hover{background:var(--au-navy-mid);transform:translateY(-1px)}
+body.dark .pool-btn{background:var(--au-green);color:#00243F}
+.pool-hint{font-size:13.5px;color:var(--ink-soft);font-style:italic}
+@media(prefers-reduced-motion:reduce){.pchip{transition:none!important}.pool-head{transition:none!important}}
+
+/* worked example chart */
+.chart-wrap{background:var(--surface-card);border:1px solid var(--line);border-radius:12px;padding:16px 20px 12px}
+body.dark .chart-wrap{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+.chart{width:100%;height:auto;display:block}
+.ch-grid line{stroke:var(--line);stroke-width:1}
+.ch-grid .ch-faint{stroke:var(--line);stroke-width:1;opacity:.55}
+.ch-tick text{font-family:"Source Sans 3",sans-serif;font-size:12px;fill:var(--ink-soft)}
+.ch-tick .ch-axis{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;fill:var(--ink-soft)}
+.ch-ref{stroke:var(--au-green-deep);stroke-width:1.5;stroke-dasharray:5 5;opacity:.85}
+.ch-reflab{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;fill:var(--au-green-deep)}
+.ch-line{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2200;stroke-dashoffset:2200}
+.slide.active .ch-line{animation:draw 1.5s cubic-bezier(.3,.9,.4,1) .35s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.ch-light{stroke:var(--au-navy)}
+body.dark .ch-light{stroke:var(--au-gray)}
+.ch-cal{stroke:var(--au-green-deep)}
+.ch-dot{fill:var(--au-navy);stroke:var(--surface-card);stroke-width:3;opacity:0}
+.ch-dot--alt{fill:var(--au-navy-mid)}
+.slide.active .ch-dot{animation:pop .4s ease 1.6s forwards}
+@keyframes pop{to{opacity:1}}
+body.dark .ch-dot{fill:var(--au-green)}
+.ch-note{font-family:"Source Sans 3",sans-serif;font-size:12.5px;font-style:italic;fill:var(--ink-mid)}
+.ch-legend{display:flex;gap:24px;flex-wrap:wrap;margin-top:6px;padding-left:52px}
+.ch-legend .lg i{border-radius:2px}
+.qopts{display:flex;flex-direction:column;gap:7px}
+.qopts span{font-size:clamp(14px,1.45vw,16.5px);color:var(--ink-mid);padding:7px 12px;border-radius:8px;background:var(--surface-muted)}
+.qopts .is-key{background:var(--au-green-pale);color:var(--ink);font-weight:700;box-shadow:inset 3px 0 0 var(--au-green-deep)}
+body.dark .qopts .is-key{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){.ch-line{stroke-dasharray:none;stroke-dashoffset:0;animation:none!important}.ch-dot{opacity:1;animation:none!important}}
+
+/* svg hats */
+.hat{grid-template-columns:52px 1fr}
+.hat-sw{width:52px;height:34px;border:none;border-radius:0;background:none;display:flex;align-items:center}
+.hat-sw svg{width:52px;height:34px;display:block;overflow:visible}
+.hat-sw svg .hat-crown,.hat-sw svg .hat-brim{fill:currentColor;stroke:rgba(0,0,0,.22);stroke-width:.9;stroke-linejoin:round}
+.hat-sw svg .hat-band{fill:rgba(0,0,0,.3);stroke:none}
+body.dark .hat-sw svg .hat-crown,body.dark .hat-sw svg .hat-brim{stroke:rgba(255,255,255,.32)}
+/* BO answer rows */
+.steps--bo .step{grid-template-columns:74px 1fr;align-items:start;padding:14px 4px}
+.steps--bo .step-n{font-size:clamp(15px,1.6vw,19px);letter-spacing:.02em;padding-top:1px}
+.steps--bo .step-d{font-size:clamp(14.5px,1.5vw,17.5px);color:var(--ink);line-height:1.5}
+.steps--bo .step.is-key{background:var(--au-green-pale);border-radius:10px}
+.steps--bo .step.is-key .step-d{font-weight:600}
+
+/* embedded publication viewer */
+.pub-wrap{display:grid;grid-template-columns:1.75fr 1fr;gap:16px;align-items:stretch}
+.pub-frame{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface-muted);min-height:clamp(300px,46vh,470px)}
+.pub-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.pub-side{display:flex;flex-direction:column;gap:12px}
+.pub-side .s-info{flex:0 0 auto}
+.pub-note{font-size:13px;color:var(--ink-soft);font-style:italic;margin-top:auto}
+.pub-note a{color:var(--au-green-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--au-green)}
+.pub-note a:hover{color:var(--au-navy)}
+body.dark .pub-frame{background:var(--surface-muted);border-color:rgba(165,172,175,.15)}
+@media(max-width:1000px){.pub-wrap{grid-template-columns:1fr}.pub-frame{min-height:320px}}
+
+.tbd{display:inline-block;font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--au-green-deep);background:var(--au-green-pale);border-radius:100px;padding:3px 10px;margin-right:10px;vertical-align:middle}
+.tbd--sm{margin-left:8px;margin-right:0;color:var(--ink-soft);background:var(--surface-muted)}
+
+.gnote{margin-top:10px;background:var(--surface-card);border:1px solid var(--line);border-left:3px solid var(--au-green);border-radius:10px;padding:12px 14px;font-family:"Montserrat",sans-serif;font-size:13.5px;font-weight:700;color:var(--au-navy);line-height:1.3}
+.gnote-lab{display:block;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--au-green-deep);margin-bottom:5px}
+.gnote em{display:block;font-family:"Source Sans 3",sans-serif;font-style:italic;font-size:12.5px;font-weight:400;color:var(--ink-soft);margin-top:4px}
+body.dark .gnote{background:var(--surface-card);border-color:rgba(165,172,175,.15);border-left-color:var(--au-green);color:var(--ink)}
+
+/* faculty roster grid */
+.fac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.fcard{background:var(--surface-card);border:1px solid var(--line);border-left:3px solid var(--au-green);border-radius:10px;padding:14px 18px;display:flex;flex-direction:column;gap:2px;transition:transform .15s,box-shadow .15s}
+.fcard:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,30,54,.07)}
+.fcard-first{font-size:13px;color:var(--ink-soft)}
+.fcard-last{font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(15px,1.6vw,19px);color:var(--au-navy);letter-spacing:-.01em}
+body.dark .fcard{background:var(--surface-card);border-color:rgba(165,172,175,.15);border-left-color:var(--au-green)}
+body.dark .fcard-last{color:var(--ink)}
+@media(max-width:1000px){.fac-grid{grid-template-columns:1fr 1fr}}
+
+/* publication list */
+.pubs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pcite{background:var(--surface-card);border:1px solid var(--line);border-top:3px solid var(--au-navy);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;transition:transform .15s,box-shadow .15s}
+.pcite:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,30,54,.07)}
+.pcite--soon{border-top-color:var(--au-green)}
+.pcite--wip{border-top-color:var(--au-gray);background:var(--surface-muted)}
+.pcite-src{font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pcite-t{font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(14px,1.45vw,17px);color:var(--au-navy);line-height:1.28}
+.pcite-a{font-size:13px;color:var(--ink-mid);line-height:1.4;margin-top:auto}
+body.dark .pcite{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+body.dark .pcite-t{color:var(--ink)}
+/* viewer selector */
+.pubsel{text-align:left;background:var(--surface-card);border:1px solid var(--line);border-left:3px solid var(--line);border-radius:10px;padding:14px 16px;cursor:pointer;font-family:"Source Sans 3",sans-serif;font-size:clamp(14px,1.45vw,17px);font-weight:700;color:var(--au-navy);line-height:1.3;transition:border-color .18s,transform .15s}
+.pubsel span{display:block;font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.pubsel em{display:block;font-style:normal;font-weight:400;font-size:13px;color:var(--ink-mid);margin-top:5px}
+.pubsel:hover{transform:translateX(2px)}
+.pubsel.active{border-left-color:var(--au-green);box-shadow:0 6px 18px rgba(0,30,54,.08)}
+body.dark .pubsel{background:var(--surface-card);border-color:rgba(165,172,175,.15);color:var(--ink)}
+body.dark .pubsel.active{border-left-color:var(--au-green)}
+@media(max-width:1000px){.pubs{grid-template-columns:1fr 1fr}}
+
+
+
+.pubsel{padding:12px 15px;font-size:clamp(13.5px,1.35vw,16px)}
+.pub-more{background:var(--surface-muted);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:9px;margin-top:2px}
+.pub-more-lab{font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.pub-more-row{font-size:13.5px;color:var(--ink);line-height:1.35;display:flex;align-items:flex-start;gap:9px;flex-wrap:wrap}
+.pub-more-row em{font-style:italic;color:var(--ink-mid);font-size:12.5px}
+.pub-more-row .tbd{margin-right:0;flex:0 0 auto}
+.pub-side{gap:10px}
+
+.pub-frame{min-height:clamp(260px,42vh,420px)}
+.pub-more{padding:12px 14px;gap:7px}
+.pub-more-row{font-size:12.5px;flex-wrap:nowrap;align-items:center;gap:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pub-more-row em{font-size:11.5px}
+.pub-more-row .tbd{font-size:8.5px;padding:2px 8px}
+.pubsel{padding:11px 14px}
+.pubsel em{font-size:12px;margin-top:3px}
+.pubsel span{margin-bottom:4px}
+
+.pdf-load{display:inline-flex;align-items:center;justify-content:center;font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--au-navy);background:var(--surface-muted);border:1px solid var(--line);border-radius:100px;padding:10px 18px;cursor:pointer;transition:background .2s,color .2s;align-self:flex-start}
+.pdf-load:hover{background:var(--au-navy);color:#fff;border-color:var(--au-navy)}
+.pdf-load input{display:none}
+body.dark .pdf-load{color:var(--ink)}
+
+/* topic pool */
+.tpc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tpc{background:var(--surface-card);border:1px solid var(--line);border-left:3px solid var(--au-green);border-radius:10px;padding:10px 14px;font-size:clamp(12.5px,1.25vw,14.5px);color:var(--ink);line-height:1.3;display:flex;gap:10px;align-items:flex-start;transition:transform .15s,box-shadow .15s}
+.tpc:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,30,54,.07)}
+.tpc-n{font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:800;color:var(--au-green-deep);flex:0 0 auto;padding-top:2px}
+body.dark .tpc{background:var(--surface-card);border-color:rgba(165,172,175,.15);border-left-color:var(--au-green)}
+@media(max-width:1000px){.tpc-grid{grid-template-columns:1fr 1fr}}
+
+/* ---- final orientation additions ---- */
+.rub-wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,48px);align-items:center;margin-top:8px}
+.rub-phone{width:clamp(240px,22vw,290px);height:clamp(480px,56vh,580px);background:#fff;border-radius:44px;position:relative;box-shadow:0 0 0 10px #1a1a1c,0 0 0 12px #2c2c2e,0 26px 60px rgba(0,30,54,.28);overflow:hidden;flex-shrink:0;--rs:.78}
+.rub-screen{position:absolute;top:38px;left:0;right:0;bottom:0;overflow:hidden}
+.rub-phone iframe{position:absolute;top:0;left:0;width:calc(100%/var(--rs));height:calc(100%/var(--rs));border:0;display:block;transform:scale(var(--rs));transform-origin:top left}
+.rub-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:78px;height:20px;background:#1a1a1c;border-radius:100px;z-index:3;pointer-events:none}
+.rub-status{position:absolute;top:0;left:0;right:0;height:38px;background:#fff;z-index:2;border-radius:34px 34px 0 0}
+body.dark .rub-status{background:#fff}
+.rub-ext{display:inline-flex;align-items:center;gap:8px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--au-navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s;margin-top:4px}
+.rub-ext:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,30,54,.25)}
+body.dark .rub-phone{box-shadow:0 0 0 10px #000,0 0 0 12px #14181c,0 26px 60px rgba(0,0,0,.5)}
+body.dark .rub-ext{background:var(--au-green);color:#0a1826}
+.tpc-grid--final{grid-template-columns:repeat(4,1fr)}
+.tpc-grid--final .tpc{display:flex;flex-direction:column;gap:6px;padding-bottom:12px}
+.tpc-grid--final .tpc .tpc-n{color:var(--au-green-deep)}
+.tpc-tag{margin-top:auto;align-self:flex-start;font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--au-navy);color:#fff;padding:5px 9px;border-radius:4px;line-height:1}
+body.dark .tpc-tag{background:var(--au-green);color:#0a1826}
+</style>
+
+</head>
+<body>
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA4MS4zIDg1LjEiPgo8ZGVmcz48c3R5bGU+LnN0MHtmaWxsOm5vbmV9LnN0MXtmaWxsOiNmZmZ9LnN0MntmaWxsOiMwMDMwNTV9PC9zdHlsZT48L2RlZnM+CjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03OS4wMiwyLjM3SDIuNzR2NTQuMjNoMS4xYy45NiwxNC4zNSwxNy4wOSwyNS43NywzNi44NSwyNS43N3MzNS44OS0xMS40MiwzNi44NS0yNS43N2gxLjQ3VjIuMzdaIi8+CjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0wLDQ0LjVjMCwyMi41LDE4LjIsNDAuNyw0MC43LDQwLjdoMGMyMi41LDAsNDAuNy0xOC4yLDQwLjctNDAuN1YwSDB2NDQuNVpNMy44LDMuOGg3My44djQwLjdjMCwxMy45LTcuNywyNi0xOSwzMi4zbC0uNy40Yy01LjEsMi43LTExLDQuMi0xNy4yLDQuMnMtMTItMS41LTE3LjItNC4ybC0uNy0uNEMxMS41LDcwLjUsMy44LDU4LjQsMy44LDQ0LjVjMCwwLDAtNDAuNywwLTQwLjdaIi8+CjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yNC4zLDI2LjNsLTIuNC0zLjF2LTEuM2gzNy41djEuM2wtMi40LDMuMSw4LjMsNDAuMWM1LjItNS44LDguNC0xMy41LDguNC0yMlY3LjZINy42djM2LjljMCw4LjUsMy4yLDE2LjIsOC40LDIybDguMy00MC4yaDBaTTE3LjksMTUuMmg0NS42bC44LDMuOUgxNy4xYzAtLjEuOC0zLjkuOC0zLjlaIi8+CjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik01Ni45LDU2LjZIMjQuNWwxLjksMi42LTIuOCwxMy43Yy45LjUsMS44LDEsMi43LDEuNWwzLjgtMTEuNGgyMS4xbDMuOCwxMS4zYy45LS40LDEuOC0uOSwyLjctMS41bC0yLjctMTMuNywxLjktMi41aDBaIi8+CjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yNC44LDQ4LjNsLS41LDIuNmgzMi43bC0uNS0yLjZoLTMuOGwtMy43LTE4LjEsMi0yLjZoLTIwLjZsMiwyLjYtMy43LDE4LjFoLTMuOVpNMzQuMiwzNC4xaDIuNmMuMSwwLC4yLjEuMS4yLS4xLjMtLjIuNi0uMy45LDAsLjItLjEuNS0uMS44aDBjMCwyLjYsMi4yLDMuNCwzLjEsMy42LDIuOS42LDMuMiwxLjMsMy4yLDEuMy01LjgtLjQtOC4yLjQtOC44LDEuMSwwLC4xLS4xLjItLjEuM3YxLjljMCwxLDMsMS44LDYuNiwxLjhzNi42LS44LDYuNi0xLjh2LTEuOWMwLS4yLS4xLS40LS4yLS42LS42LS42LTIuMy0yLjQtMi4zLTUuNCwwLS4xLDAtLjktLjEtMS4ycy0uMi0uNi0uMy0uOWMwLS4xLDAtLjIuMS0uMmgyLjZsMi45LDE0LjJoLTE4LjVsMi45LTE0LjFoMFpNNDUuMiw0My44YzAsLjQtMiwuOC00LjUuOHMtNC41LS4zLTQuNS0uOGMwLS4zLDEuNC0uNywzLjItLjcuMi41LjcuOCwxLjMuOHMxLjEtLjMsMS4zLS44YzEuOSwwLDMuMi4zLDMuMi43WiIvPgo8L3N2Zz4=" alt="" class="au-shield">
+<div class="deck" id="deck">
+
+<!-- 1 TITLE -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center;padding:72px 120px"><div class="title-kicker reveal d1">Final Student Orientation</div><h1 class="reveal d2">BioMaterials<br>Clinical Seminars<span class="sub">RSDM 5511 &middot; Fall 2026</span></h1><div class="content-sub reveal d3" style="margin-top:22px;margin-bottom:0">Eleven seminars, eleven topics, one semester. This is the <strong>final</strong> orientation: your group, your topic, your facilitator, the rubric you will be scored on, and the mechanics of seminar week. First seminar: <strong>October 13</strong>.</div><div class="title-credentials reveal d4" style="display:grid;grid-template-columns:repeat(4,auto);gap:0 clamp(24px,3vw,48px);justify-content:start;margin-top:32px;padding-top:24px"><div class="tc-block"><span class="tc-label">Course Director</span><span class="tc-value bold">Rafael Rocha Pacheco, DDS, MSc, PhD</span></div><div class="tc-block"><span class="tc-label">Position</span><span class="tc-value">Associate Dean for Digital Technologies<br>Associate Professor</span></div><div class="tc-block"><span class="tc-label">Department</span><span class="tc-value">Restorative Sciences<br>Section of Dental Materials</span></div><div class="tc-block"><span class="tc-label">Contact</span><span class="tc-value">GC 5222 | RAPACHECO@augusta.edu</span></div></div></div></section>
+
+<!-- 2 NAVY: WHY -->
+<section class="slide slide--navy"><div class="chrome-top"></div><div class="slide-inner"><div class="section-kicker reveal d1">Why This Exists</div><h2 class="reveal d2">You Asked<br><em>For This</em></h2></div></section>
+
+<!-- 3 QUOTE -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="center-wrap"><div class="center-label reveal d1">Course Evaluations, Every Year</div><div class="center-title reveal d2">&ldquo;I want to learn about the new materials, not the old ones.&rdquo;</div><div class="center-sub reveal d3" style="margin-top:20px">So the seminars were built around exactly that. Each group takes a material or technique that is <strong>new, innovative, controversial, or simply untested</strong>, and works out what the evidence actually supports.</div><div class="center-body reveal d4">You teach the class. Faculty facilitate.</div></div></div></section>
+
+<!-- 5 NAVY: THE WORK -->
+<section class="slide slide--navy"><div class="chrome-top"></div><div class="slide-inner"><div class="section-kicker reveal d1">The Work</div><h2 class="reveal d2">Five Questions,<br><em>Whatever the Topic</em></h2></div></section>
+
+<!-- 6 FIVE QUESTIONS -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="split"><div><div class="slide-kicker reveal d1">What Every Seminar Answers</div><div class="content-title reveal d2">The Five <em>Behavioral Objectives</em></div><div class="content-sub reveal d3" style="max-width:100%">Your five objectives are written against these questions. They are the spine of the presentation and the source of every quiz and exam question that follows it.</div><div class="content-statement reveal d3" style="max-width:100%">Answer them for a clinician, not for a grader.</div></div>
+<div class="steps reveal d4">
+<div class="step"><div class="step-n">01</div><div><div class="step-t">Problem</div><div class="step-d">What issue is being addressed in a new or unconventional way?</div></div></div>
+<div class="step"><div class="step-n">02</div><div><div class="step-t">Claims vs. evidence</div><div class="step-d">What do the ads promise, and what does the literature actually show?</div></div></div>
+<div class="step"><div class="step-n">03</div><div><div class="step-t">Principles</div><div class="step-d">Do fundamental materials science principles support the claim?</div></div></div>
+<div class="step"><div class="step-n">04</div><div><div class="step-t">Decision tree</div><div class="step-d">Build a flowchart a clinician could follow chairside.</div></div></div>
+<div class="step"><div class="step-n">05</div><div><div class="step-t">Application</div><div class="step-d">Apply it to a real or simulated clinical case.</div></div></div>
+</div></div></div></section>
+
+<!-- 7 GROUPS -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Your Group</div><div class="content-title reveal d2">Eleven Groups, <em>Eleven Topics</em></div><div class="content-sub reveal d3">Groups, topics, and facilitators are final and posted on D2L. Each tile is one seminar on the calendar; the next slides put a name and a date on every one of them.</div><div class="tiles tiles--xl reveal d3" style="margin-bottom:22px"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span></div><div class="metrics-grid reveal d4" style="margin-top:0"><div class="metric-card"><div class="metric-big">8&ndash;9</div><div class="metric-label">Students</div><div class="metric-sub">per group, split into subgroups</div></div><div class="metric-card"><div class="metric-big">1</div><div class="metric-label">Facilitator</div><div class="metric-sub">opens and closes your session</div></div><div class="metric-card"><div class="metric-big">30&ndash;40</div><div class="metric-label">Minutes</div><div class="metric-sub">inside a 70-minute session</div></div><div class="metric-card"><div class="metric-big">5</div><div class="metric-label">Objectives</div><div class="metric-sub">answered and reviewed on screen</div></div></div><div class="content-statement reveal d5">Work as a team. Investigate with evidence-based literature, answer the five objectives, and anchor all of it in clinical cases.</div></div></section>
+
+<!-- 7E SETTLED BOARD -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Settled<span class="kicker-r">11 of 11 claimed &middot; 24 candidates on the board</span></div><div class="content-title reveal d2" style="margin-bottom:4px">The 2026 <em>Topics</em></div><div class="content-sub reveal d2" style="margin-bottom:14px;max-width:100%">The facilitators drafted from the pool you saw in August, and Group 2 brought its own. These are final. Group number, topic, facilitator, and the Tuesday you present.</div>
+<div class="tpc-grid tpc-grid--final reveal d3">
+<div class="tpc"><span class="tpc-n">G01</span>Little Crowns: Stainless Steel vs. Zirconia in Pediatric Dentistry<span class="tpc-tag">Magalh&atilde;es &middot; Oct 13</span></div>
+<div class="tpc"><span class="tpc-n">G02</span>It Touched Saliva. Now What? Contamination and Bonding to Composite, Ceramics, and Acrylics<span class="tpc-tag">Griffin &middot; Oct 20</span></div>
+<div class="tpc"><span class="tpc-n">G03</span>Candida&rsquo;s Favorite Bed: Printed, Milled, and Heat-Cured Denture Bases vs. Stomatitis<span class="tpc-tag">Jauregui &middot; Oct 20</span></div>
+<div class="tpc"><span class="tpc-n">G04</span>Bleaching and Sensitivity: Material Strategies for Whiter, Happier Patients<span class="tpc-tag">Frazier &middot; Oct 27</span></div>
+<div class="tpc"><span class="tpc-n">G05</span>The BPA Question: Monomer Release from Sealants and Composites<span class="tpc-tag">Christman &middot; Oct 27</span></div>
+<div class="tpc"><span class="tpc-n">G06</span>Lithium Disilicate vs. Zirconia: Choosing the Right Ceramic<span class="tpc-tag">Manhiani + Robles-Moreno &middot; Nov 3</span></div>
+<div class="tpc"><span class="tpc-n">G07</span>Post and Core Decisions: Fiber vs. Metal Post and Core<span class="tpc-tag">Haeberle &middot; Nov 3</span></div>
+<div class="tpc"><span class="tpc-n">G08</span>Young Eyes: Blue-Light Hazard and Eye Protection in the Operatory<span class="tpc-tag">Rueggeberg &middot; Nov 10</span></div>
+<div class="tpc"><span class="tpc-n">G09</span>Scan or Squish: Digital vs. Conventional Impressions for Edentulous Patients<span class="tpc-tag">Britton + Harris &middot; Nov 10</span></div>
+<div class="tpc"><span class="tpc-n">G10</span>Dentin Fights Back: MMPs, Collagen Degradation, and the Life of the Hybrid Layer<span class="tpc-tag">Messer &middot; Nov 17</span></div>
+<div class="tpc"><span class="tpc-n">G11</span>Light as Therapy: Photobiomodulation in the Dental Chair<span class="tpc-tag">Bachand &middot; Nov 17</span></div>
+</div>
+</div></section>
+
+<!-- 7F GROUP BROWSER -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:flex-start;padding-top:48px"><div class="slide-kicker reveal d1">Your Group<span class="kicker-r">95 students &middot; eleven groups &middot; GB 1120</span></div><div class="content-title reveal d2" style="margin-bottom:4px">Your Topic, <em>Your Date</em></div><div class="content-sub reveal d3" style="margin-bottom:6px">Click your group. The three dates on the card are the only ones that matter to you.</div>
+<div class="gbrowse reveal d4"><div class="glist" id="gList"></div><div class="gpanel" id="gPanel"></div></div>
+<div class="s-info reveal d5" style="border-left:3px solid var(--au-green);margin-top:14px"><div class="s-info-label">Your facilitator has the plan</div><div class="s-info-text">The faculty were briefed on how to proceed: topic, five behavioral objectives, meeting dates, and deadlines. <strong>If your facilitator has not contacted your group yet, email them now.</strong> Do not wait for the email to arrive; the group leader sends it this week.</div></div>
+</div></section>
+
+
+<!-- 7B POOL TO GROUPS -->
+
+
+<script>
+/* ===== BMCS group data, Fall 2026 final assignments ===== */
+window.BMCS_GROUPS=[
+ {n:1, topic:"Little Crowns: Stainless Steel vs. Zirconia in Pediatric Dentistry", fac:"Dr. Gabriela Magalh\u00e3es", short:"Magalh\u00e3es", date:"Tuesday, October 13", time:"10:30 to 11:50 AM", send:"Monday, October 5", post:"Sunday, October 11", members:["Barber, Montana D.","Bruce, Peyton S.","Bush, Samuel T.","Ejikeme, Glorene E.","Gay, Claire L.","Harris, Lily G.","Mauzy, Adam M.","Morgenroth, Mikayla","Spurgeon, Margaret E."]},
+ {n:2, topic:"It Touched Saliva. Now What? Contamination and Bonding to Composite, Ceramics, and Acrylics", fac:"Dr. Gregory Griffin", short:"Griffin", date:"Tuesday, October 20", time:"9:00 to 10:20 AM", send:"Monday, October 12", post:"Sunday, October 18", members:["Arias, Carlos E.","Arms, Julianna M.","Bangiyev, Sandra I.","Bartlett, Megan V.","Iteghie, Oshiomogho V.","Owens, Madeline G.","Shah, Sahil D.","Sharp, Cyrus H.","Villa, Colton"]},
+ {n:3, topic:"Candida\u2019s Favorite Bed: Printed, Milled, and Heat-Cured Denture Bases vs. Stomatitis", fac:"Dr. Catherine Jauregui", short:"Jauregui", date:"Tuesday, October 20", time:"10:30 to 11:50 AM", send:"Monday, October 12", post:"Sunday, October 18", members:["Ayati, Gabrielle C.","Bhat, Keshav","Carbaugh, Leighanne S.","Castillo, Andrea L.","Depoi, Paige C.","Doran, Leighton M.","Duke, Taylor L.","Grantham, Brayden E.","Maqbool, Ruba"]},
+ {n:4, topic:"Bleaching and Sensitivity: Material Strategies for Whiter, Happier Patients", fac:"Dr. Kevin Frazier", short:"Frazier", date:"Tuesday, October 27", time:"9:00 to 10:20 AM", send:"Monday, October 19", post:"Sunday, October 25", members:["Abdelmasih, Veronica A.","Capps, Macy","Crosby, Bryce","Kelly, Reagan J.","Khoshneviszadeh, Shawyu","Plummer, Julia A.","Santana, Isabella N.","Tang, Jocelyn","Williams, Reese K."]},
+ {n:5, topic:"The BPA Question: Monomer Release from Sealants and Composites", fac:"Prof. Ashley Christman", short:"Christman", date:"Tuesday, October 27", time:"10:30 to 11:50 AM", send:"Monday, October 19", post:"Sunday, October 25", members:["Matthews, Nathaniel J.","Ngo, Tracy T.","Nguyen, Chloe T.","Ozulumba, Lily C.","Redecker, Elizabeth L.","Smith, Jasmyn","Stuber, Emily A.","Warren, Allison W."]},
+ {n:6, topic:"Lithium Disilicate vs. Zirconia: Choosing the Right Ceramic", fac:"Dr. Marlina Manhiani & Dr. Marlen Robles-Moreno", short:"Manhiani + Robles-Moreno", date:"Tuesday, November 3", time:"9:00 to 10:20 AM", send:"Monday, October 26", post:"Sunday, November 1", members:["Chatham, Abigail","Cohen, Bradley W.","Falkowski, Lauren A.","Kamalasanan, Sujay S.","Mcgee, Jamonica","Newman, Hannah F.","Tobia, Joseph","Underwood, Evan R.","Vyas, Yesha"]},
+ {n:7, topic:"Post and Core Decisions: Fiber vs. Metal Post and Core", fac:"Dr. Brent Haeberle", short:"Haeberle", date:"Tuesday, November 3", time:"10:30 to 11:50 AM", send:"Monday, October 26", post:"Sunday, November 1", members:["Bennett, Camerilla T.","Cottrell, Stephen","Hall, Reece D.","Killedar, Daniya","Leng, Allison F.","Palmer, Sydney E.","Pickering, Reid","Rayburn, Alexis G."]},
+ {n:8, topic:"Young Eyes: Blue-Light Hazard and Eye Protection in the Operatory", fac:"Dr. Frederick Rueggeberg", short:"Rueggeberg", date:"Tuesday, November 10", time:"9:00 to 10:20 AM", send:"Monday, November 2", post:"Sunday, November 8", members:["Angel, Elizabeth","Beard, Lee A.","Konate, Sere","Rizig, Gracy F.","Shin, Dylan","Singletary, Laura A.","Smidtas, Lukas","Van Derhei, Aidan M."]},
+ {n:9, topic:"Scan or Squish: Digital vs. Conventional Impressions for Edentulous Patients", fac:"Dr. Eduardo Britton & Dr. Ronald Harris", short:"Britton + Harris", date:"Tuesday, November 10", time:"10:30 to 11:50 AM", send:"Monday, November 2", post:"Sunday, November 8", members:["Aaron, William T.","Akinniyi, Majeed A.","Choi, Max H.","Flynn, Matthew J.","Hunter, Reginald","Johnson, Jaylan D.","Jones, Sydney K.","Kim, Jihwan","Thakkar, Tanya R."]},
+ {n:10, topic:"Dentin Fights Back: MMPs, Collagen Degradation, and the Life of the Hybrid Layer", fac:"Dr. Regina Messer", short:"Messer", date:"Tuesday, November 17", time:"9:00 to 10:20 AM", send:"Monday, November 9", post:"Sunday, November 15", members:["Allen, Tate J.","Farooqi, Azmath","Hardaway, Rebecca","Momin, Saif R.","Nesley, Jack C.","Poblete, Alessandra Gabr C","Reese, Katherine R.","Retterbush, Jonathan E.","Sharon, Carter J."]},
+ {n:11, topic:"Light as Therapy: Photobiomodulation in the Dental Chair", fac:"Dr. Bill Bachand", short:"Bachand", date:"Tuesday, November 17", time:"10:30 to 11:50 AM", send:"Monday, November 9", post:"Sunday, November 15", members:["Edwards, Lauren","Geurts, Marissa L.","Long, Sullivan M.","Okasha, Sami I.","Phillips, Monthip H.","Ritchey, Rachel N.","Shah, Jwalant B.","Williams, A'zariah"]}
+];
+/* ===== end data block ===== */
+(function(){
+  var G=window.BMCS_GROUPS, list=document.getElementById('gList'), panel=document.getElementById('gPanel');
+  if(list&&panel){
+  list.innerHTML=G.map(function(g,i){return '<button class="gbtn'+(i===0?' active':'')+'" data-i="'+i+'"><b>'+String(g.n).padStart(2,'0')+'</b><span>'+g.date.replace('Tuesday, ','').replace('October','Oct').replace('November','Nov')+'</span></button>';}).join('');
+  function render(i){
+    var g=G[i];
+    panel.innerHTML='<div class="gp-head"><div class="gp-badge"><span>Group</span>'+g.n+'</div><div class="gp-head-txt"><div class="gp-fac">'+g.topic+'</div><div class="gp-topic">Facilitated by '+g.fac.replace(/ & /g,' &amp; ')+'</div></div></div>'+
+      '<div class="gp-dates"><div class="gp-d"><span>Send to faculty</span>'+g.send+'</div><div class="gp-d"><span>Post in D2L, 5:00 PM</span>'+g.post+'</div><div class="gp-d gp-d--go"><span>You present</span>'+g.date+'<em>'+g.time+'</em></div></div>'+
+      '<div class="gp-names"><div class="gp-names-lab">'+g.members.length+' students</div><div class="gp-names-grid">'+g.members.map(function(m){return '<span>'+m+'</span>';}).join('')+'</div></div>';
+    Array.prototype.forEach.call(list.querySelectorAll('.gbtn'),function(b,j){b.classList.toggle('active',j===i);});
+  }
+  list.addEventListener('click',function(e){var b=e.target.closest('.gbtn');if(b)render(+b.dataset.i);});
+  render(0);
+  }
+
+  /* ---- pool to groups animation ---- */
+  var pool=document.getElementById('pool');
+  if(!pool)return;
+  var short=function(n){var p=n.split(',');return p.length>1?p[0].trim()+' '+p[1].trim().charAt(0)+'.':n;};
+  var flat=[],gi;
+  G.forEach(function(g,gidx){g.members.forEach(function(m,mi){flat.push({name:short(m),g:gidx,row:mi});});});
+  var maxRow=Math.max.apply(null,G.map(function(g){return g.members.length;}));
+  var cnt=document.getElementById('poolCount'); if(cnt)cnt.textContent=flat.length+' students \u00b7 11 groups';
+  pool.innerHTML=G.map(function(g,i){return '<span class="pool-head" data-g="'+i+'">'+g.n+'</span>';}).join('')+
+    flat.map(function(f,i){return '<span class="pchip" data-i="'+i+'">'+f.name+'</span>';}).join('');
+  var heads=[].slice.call(pool.querySelectorAll('.pool-head')),chips=[].slice.call(pool.querySelectorAll('.pchip'));
+  var seed=7,rnd=function(){seed=(seed*1103515245+12345)%2147483648;return seed/2147483648;};
+  var order=flat.map(function(_,i){return i;});
+  for(var k=order.length-1;k>0;k--){var j=Math.floor(rnd()*(k+1));var t=order[k];order[k]=order[j];order[j]=t;}
+  var cellOf=[],jit=[];
+  order.forEach(function(idx,pos){cellOf[idx]=pos;jit[idx]=[rnd(),rnd()];});
+  var grouped=false;
+  function place(){
+    var W=pool.clientWidth,H=pool.clientHeight;
+    if(!W||!H)return;
+    var cols=G.length,colW=W/cols,cw=Math.floor(colW)-7,headH=30,
+        rowH=Math.min(27,Math.floor((H-headH-6)/maxRow));
+    chips.forEach(function(c,i){
+      c.style.width=cw+'px';
+      var f=flat[i],x,y;
+      if(grouped){x=Math.round(f.g*colW);y=headH+f.row*rowH;}
+      else{var pcols=10,cellW=W/pcols,prows=Math.ceil(flat.length/pcols),cellH=(H-26)/prows,
+             cx=(cellOf[i]%pcols)*cellW,cy=Math.floor(cellOf[i]/pcols)*cellH;
+           x=Math.round(cx+jit[i][0]*Math.max(0,cellW-cw*0.72));y=Math.round(cy+6+jit[i][1]*Math.max(0,cellH-24));
+           x=Math.min(x,W-cw);}
+      c.style.transform='translate('+x+'px,'+y+'px)';
+      c.style.transitionDelay=(i%12)*10+'ms';
+    });
+    heads.forEach(function(h,i){h.style.width=cw+'px';h.style.transform='translate('+Math.round(i*colW)+'px,0)';});
+    pool.classList.toggle('is-grouped',grouped);
+  }
+  function toggle(){grouped=!grouped;place();
+    var b=document.getElementById('poolBtn');if(b)b.textContent=grouped?'Shuffle again':'Sort into groups';
+    var hint=document.getElementById('poolHint');if(hint)hint.textContent=grouped?'Eleven groups of eight or nine':'Click the board or press the button';}
+  pool.addEventListener('click',toggle);
+  pool.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();e.stopPropagation();toggle();}});
+  var btn=document.getElementById('poolBtn');if(btn)btn.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  window.addEventListener('resize',place);
+  var host=pool.closest('.slide');
+  if(host&&window.MutationObserver){
+    new MutationObserver(function(){if(host.classList.contains('active'))place();}).observe(host,{attributes:true,attributeFilter:['class']});
+  }
+  setTimeout(place,60);setTimeout(place,600);
+})();
+</script>
+
+<!-- 8 NAVY: ASSIGNMENT -->
+<section class="slide slide--navy"><div class="chrome-top"></div><div class="slide-inner"><div class="section-kicker reveal d1">The Assignment</div><h2 class="reveal d2">What You Submit,<br><em>And When</em></h2></div></section>
+
+<!-- 9 DELIVERABLES -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Deadlines</div><div class="content-title reveal d2">The Week You <em>Present</em></div><div class="content-sub reveal d3">Your group leader owns the submissions. Everything reaches faculty a full week ahead so there is time for comments and a revision before the class sees it.</div>
+<div class="strip reveal d4">
+<div class="day"><div class="day-w">4 to 5 weeks out</div><div class="day-t">First meeting</div><div class="day-d">Meet the facilitator, split the work, assign leadership roles.</div></div>
+<div class="day day--due"><div class="day-w">Monday &middot; one week out</div><div class="day-t">Send it in</div><div class="day-d">Written responses to the five objectives in a Word file, plus the draft deck, emailed to the course director and the facilitator.</div></div>
+<div class="day day--due"><div class="day-w">That week</div><div class="day-t">Comments come back</div><div class="day-d">Dr. Pacheco or Dr. Rueggeberg reviews and returns comments. You revise from there.</div></div>
+<div class="day day--hard"><div class="day-w">Sunday &middot; 5:00 PM</div><div class="day-t">Posted in D2L</div><div class="day-d">The final .pptx and the written responses must be posted in D2L. This deadline is firm: the class studies from them before your session.</div></div>
+<div class="day day--go"><div class="day-w">Tuesday</div><div class="day-t">You present</div><div class="day-d">The class has already read your objectives and responses.</div></div>
+</div>
+<div class="info-grid triple reveal d5" style="margin-top:18px"><div class="s-info"><div class="s-info-label">Right after your session</div><div class="s-info-text"><strong>One</strong> of your five objectives becomes the quiz question for the whole class.</div></div><div class="s-info"><div class="s-info-label">December 1</div><div class="s-info-text"><strong>Two</strong> more become questions on Exam #4, which is built entirely from the seminars.</div></div><div class="s-info"><div class="s-info-label">All semester</div><div class="s-info-text">Your written responses are the <strong>study guide</strong> the rest of the class uses.</div></div></div>
+</div></section>
+
+<!-- 10B BO EXAMPLE: OBJECTIVE TO QUESTION -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Worked Example &middot; Fall 2025<span class="kicker-r">Warmed composites &middot; answers condensed from their handout</span></div><div class="content-title reveal d2">From Objective to <em>Question</em></div>
+<div class="split reveal d3" style="margin-top:16px">
+<div class="steps steps--bo">
+<div class="step"><div class="step-n">BO 1</div><div class="step-d">Pre-heating lowers the viscosity of a packable composite and raises monomer conversion when it is cured at that temperature.</div></div>
+<div class="step"><div class="step-n">BO 2</div><div class="step-d">Heating a conventional composite drops viscosity, but not to flowable levels, unless it is a thermoviscous formulation.</div></div>
+<div class="step"><div class="step-n">BO 3</div><div class="step-d">Better wetting, lower film thickness, and more stickiness improve adaptation to the internal walls and handling.</div></div>
+<div class="step"><div class="step-n">BO 4</div><div class="step-d">Dispensers, bench warmers, wax pots, and operatory lights. Cost, heating outside the manufacturer's instructions, and added chair time.</div></div>
+<div class="step is-key"><div class="step-n">BO 5</div><div class="step-d">Four minutes on the operatory light to reach 64&#176;C, a peak above 80&#176;C, and under a minute to cool back to device temperature.</div></div>
+</div>
+<div class="s-info" style="border-left:3px solid var(--au-green)"><div class="s-info-label">The quiz question objective 5 produced</div><div class="s-info-text" style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--au-navy);font-size:clamp(15px,1.6vw,19px);line-height:1.35;margin:6px 0 14px">How long does it take to raise the resin composite temperature inside a compule to match the temperature of a commercial pre-heating device?</div><div class="qopts"><span>A. 3 minutes</span><span>B. 10 minutes</span><span class="is-key">C. 4 minutes</span><span>D. 1 minute</span><span>E. 7 minutes</span></div><div class="s-info-text" style="border-top:1px solid var(--line);padding-top:12px;margin-top:14px">The whole class answered this right after the session, and two more of their objectives became questions on Exam #4. The group then took the work further: it is now a continuing education article in <strong>Inside Dentistry</strong>.</div></div>
+</div></div></section>
+
+<!-- 11 FACILITATOR -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Getting Started</div><div class="content-title reveal d2">Working with Your <em>Facilitator</em></div><div class="content-sub reveal d3">They guide the work and review the drafts. The presentation itself is yours.</div><div class="key-grid reveal d4"><div class="key-card"><div class="key-num">1</div><div class="key-text"><strong>They reach out first.</strong> Expect an organizational plan, target deadlines, and possible meeting dates.</div></div><div class="key-card"><div class="key-num">2</div><div class="key-text"><strong>You lock the dates.</strong> In person or virtual, whichever the group can actually keep.</div></div><div class="key-card"><div class="key-num">3</div><div class="key-text"><strong>You assign roles.</strong> A group leader submits, subgroups own specific objectives, one student hosts.</div></div><div class="key-card"><div class="key-num">4</div><div class="key-text"><strong>You own it.</strong> The facilitator corrects and adds during the review, but the class sees your work.</div></div></div></div></section>
+
+<!-- 12 NAVY: PRESENTATION DAY -->
+<section class="slide slide--navy"><div class="chrome-top"></div><div class="slide-inner"><div class="section-kicker reveal d1">Presentation Day</div><h2 class="reveal d2">Seventy Minutes,<br><em>Not a Minute More</em></h2></div></section>
+
+<!-- 13 SESSION TIMELINE -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">How the Session Runs<span class="kicker-r">Segments drawn to scale &middot; 70 minutes either way</span></div><div class="content-title reveal d2">Two Ways to Run <em>the Hats</em></div><div class="content-sub reveal d3">Your group decides with the facilitator: weave the Six Thinking Hats through the presentation, or run them as a block right after it. The total does not move.</div>
+<div class="runs reveal d4">
+<div class="run-row"><div class="run-lab">Option A<span>Hats embedded</span></div><div class="run-bar" style="grid-template-columns:5fr 50fr 10fr 5fr">
+<div class="rseg"><b>5</b>Facilitator opens</div>
+<div class="rseg rseg--main"><b>50</b>You present, with the hats woven through the discussion</div>
+<div class="rseg"><b>10</b>Facilitator reviews</div>
+<div class="rseg rseg--end"><b>5</b>Quiz</div>
+</div></div>
+<div class="run-row"><div class="run-lab">Option B<span>Hats after</span></div><div class="run-bar" style="grid-template-columns:5fr 40fr 10fr 10fr 5fr">
+<div class="rseg"><b>5</b>Facilitator opens</div>
+<div class="rseg rseg--main"><b>40</b>You present</div>
+<div class="rseg rseg--hats"><b>10</b>Six Thinking Hats</div>
+<div class="rseg"><b>10</b>Facilitator reviews</div>
+<div class="rseg rseg--end"><b>5</b>Quiz</div>
+</div></div>
+</div>
+<div class="axis reveal d5"><span>9:00 or 10:30 start</span><i></i><span>70 minutes total, do not exceed</span></div>
+<div class="info-grid triple reveal d5" style="margin-top:18px"><div class="s-info"><div class="s-info-label">You present</div><div class="s-info-text">Background, search strategy, and the five objectives. Subgroups take their own sections, one student hosts.</div></div><div class="s-info"><div class="s-info-label">Facilitator reviews</div><div class="s-info-text">Adds what is missing, corrects mistakes, and asks the group targeted questions.</div></div><div class="s-info"><div class="s-info-label">Quiz</div><div class="s-info-text">One question from one of your objectives, taken by the whole class including your group.</div></div></div>
+</div></section>
+
+<!-- 14 SIX HATS -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">The Last Ten Minutes</div><div class="content-title reveal d2">Six Thinking Hats<em>, six seats at the table</em></div><div class="content-sub reveal d3">Six modes of thinking, mapped onto the people who actually argue about a material. Everyone speaks from a seat, so the disagreement stays productive. Run them inside the presentation or as a ten-minute block right after it.</div>
+<div class="hats reveal d4">
+<div class="hat"><span class="hat-sw"><svg viewBox="0 0 48 30" style="color:#FFFFFF" aria-hidden="true"><path class="hat-crown" d="M15 20.4V13.4C15 8.8 19 5.6 24 5.6s9 3.2 9 7.8v7z"/><ellipse class="hat-brim" cx="24" cy="20.5" rx="17" ry="3.1"/><path class="hat-band" d="M15 16.6h18v3.8H15z"/></svg></span><div><div class="hat-w">White</div><div class="hat-r">Faculty</div><div class="hat-d">Objective data and scientific evidence.</div></div></div>
+<div class="hat"><span class="hat-sw"><svg viewBox="0 0 48 30" style="color:#B3261E" aria-hidden="true"><path class="hat-crown" d="M15 20.4V13.4C15 8.8 19 5.6 24 5.6s9 3.2 9 7.8v7z"/><ellipse class="hat-brim" cx="24" cy="20.5" rx="17" ry="3.1"/><path class="hat-band" d="M15 16.6h18v3.8H15z"/></svg></span><div><div class="hat-w">Red</div><div class="hat-r">Patient</div><div class="hat-d">Emotions, concerns, and preferences.</div></div></div>
+<div class="hat"><span class="hat-sw"><svg viewBox="0 0 48 30" style="color:#25292D" aria-hidden="true"><path class="hat-crown" d="M15 20.4V13.4C15 8.8 19 5.6 24 5.6s9 3.2 9 7.8v7z"/><ellipse class="hat-brim" cx="24" cy="20.5" rx="17" ry="3.1"/><path class="hat-band" d="M15 16.6h18v3.8H15z"/></svg></span><div><div class="hat-w">Black</div><div class="hat-r">Dental insurance</div><div class="hat-d">Risk, coverage limits, and cost.</div></div></div>
+<div class="hat"><span class="hat-sw"><svg viewBox="0 0 48 30" style="color:#E8B500" aria-hidden="true"><path class="hat-crown" d="M15 20.4V13.4C15 8.8 19 5.6 24 5.6s9 3.2 9 7.8v7z"/><ellipse class="hat-brim" cx="24" cy="20.5" rx="17" ry="3.1"/><path class="hat-band" d="M15 16.6h18v3.8H15z"/></svg></span><div><div class="hat-w">Yellow</div><div class="hat-r">Dentist</div><div class="hat-d">Benefits, clinical advantages, outcomes.</div></div></div>
+<div class="hat"><span class="hat-sw"><svg viewBox="0 0 48 30" style="color:#1B7A33" aria-hidden="true"><path class="hat-crown" d="M15 20.4V13.4C15 8.8 19 5.6 24 5.6s9 3.2 9 7.8v7z"/><ellipse class="hat-brim" cx="24" cy="20.5" rx="17" ry="3.1"/><path class="hat-band" d="M15 16.6h18v3.8H15z"/></svg></span><div><div class="hat-w">Green</div><div class="hat-r">Manufacturer</div><div class="hat-d">Innovation and what comes next.</div></div></div>
+<div class="hat"><span class="hat-sw"><svg viewBox="0 0 48 30" style="color:#173F7A" aria-hidden="true"><path class="hat-crown" d="M15 20.4V13.4C15 8.8 19 5.6 24 5.6s9 3.2 9 7.8v7z"/><ellipse class="hat-brim" cx="24" cy="20.5" rx="17" ry="3.1"/><path class="hat-band" d="M15 16.6h18v3.8H15z"/></svg></span><div><div class="hat-w">Blue</div><div class="hat-r">Board of Dentistry</div><div class="hat-d">Standards, ethics, and the whole picture.</div></div></div>
+</div>
+<div class="foot-note reveal d5">Love SL &amp; Stobaugh R (2018) Critical Thinking in the Classroom: A Practitioner's Guide. Mentoring Minds.</div>
+</div></section>
+
+<!-- 15 DECK FORMAT -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Build the Deck</div><div class="content-title reveal d2">Keep It <em>Simple</em></div><div class="content-sub reveal d3">The DCG template is on D2L, and the next slide shows it. Use it. Submit the final .pptx as a stand-alone file that makes sense without anyone narrating it.</div><div class="info-grid reveal d4"><div class="s-info"><div class="s-info-label">Readable</div><div class="s-info-text">Do not crowd slides. Figures and graphs large enough to read from the back, and explained out loud.</div></div><div class="s-info"><div class="s-info-label">Named science</div><div class="s-info-text">Say which <strong>materials science concept</strong> you are covering: hardness, flexural strength, degree of conversion, and so on.</div></div><div class="s-info"><div class="s-info-label">Objectives, twice</div><div class="s-info-text">Stated clearly at the start, reviewed at the end as <strong>short phrases</strong> the class can study from.</div></div><div class="s-info"><div class="s-info-label">Legible references</div><div class="s-info-text">Full enough to identify the source, large enough to read.</div></div></div><div class="content-statement reveal d5">If it does not make sense to YOU, it will not make sense to anyone else.</div></div></section>
+
+<!-- 15B EXAMPLE DECK -->
+<!-- 12B TEMPLATE PREVIEW -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:flex-start;padding-top:52px"><div class="slide-kicker reveal d1">Build the Deck<span class="kicker-r">DCG template &middot; posted on D2L</span></div><div class="content-title reveal d2" style="margin-bottom:4px">Your <em>Template</em></div><div class="content-sub reveal d2" style="margin-bottom:14px;max-width:100%">This is the PowerPoint file you build in. Download it from D2L, keep the layouts, replace the content. Scroll through it here.</div>
+<div class="pub-wrap reveal d3">
+<div class="pub-frame"><iframe id="tplFrame" src="DCG2024%20-%20RSDM5511%20-%20BMCS%20TEMPLATE.pdf#view=FitH" title="BMCS PowerPoint template" loading="lazy"></iframe></div>
+<div class="pub-side">
+<div class="s-info"><div class="s-info-label">Use it as is</div><div class="s-info-text">Title, objectives, search strategy, content and case layouts, and the objectives review are already there, <strong>in the order the rubric expects</strong>. Keep them.</div></div>
+<div class="s-info"><div class="s-info-label">What not to do</div><div class="s-info-text">No shrinking fonts to fit more text, no figures you cannot read from the back row. The final <strong>.pptx</strong> built on it is what you submit.</div></div>
+<label class="pdf-load">Load a different PDF<input type="file" id="tplPick" accept="application/pdf"></label>
+<div class="pub-note">Not showing? Keep <strong>DCG2024 - RSDM5511 - BMCS TEMPLATE.pdf</strong> in the same folder as this file, or <a id="tplOpen" href="DCG2024%20-%20RSDM5511%20-%20BMCS%20TEMPLATE.pdf" target="_blank" rel="noopener">open it in a new tab</a>.</div>
+</div>
+</div>
+</div></section>
+<script>
+(function(){
+  var pick=document.getElementById('tplPick'),f=document.getElementById('tplFrame'),a=document.getElementById('tplOpen');
+  if(!pick||!f)return;
+  pick.addEventListener('change',function(){
+    var file=pick.files&&pick.files[0]; if(!file)return;
+    var url=URL.createObjectURL(file);
+    f.setAttribute('src',url+'#view=FitH'); if(a)a.href=url;
+  });
+})();
+</script>
+
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:flex-start;padding-top:52px"><div class="slide-kicker reveal d1">A Finished Deck<span class="kicker-r">Fall 2025 &middot; all eleven groups</span></div><div class="content-title reveal d2" style="margin-bottom:4px">What It Looks <em>Like Done</em></div><div class="content-sub reveal d2" style="margin-bottom:14px;max-width:100%">Last year&rsquo;s eleven presentations, start to finish, in the template you just saw. This is the bar. Pick a group to preview theirs.</div>
+<div class="pub-wrap reveal d3">
+<div class="pub-frame"><iframe id="pdfFrame" src="Group%201.pdf#view=FitH" title="BMCS group presentation" loading="lazy"></iframe></div>
+<div class="pub-side">
+<div class="s-info"><div class="s-info-label">Watch for</div><div class="s-info-text">The <strong>five objectives stated up front</strong>, a search strategy slide they actually talk through, the objectives reviewed at the end as short phrases, figures readable from the back row, and the materials science concept named out loud.</div></div>
+<div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin:2px 0 6px">Preview by group</div>
+<div class="pdf-groups" id="pdfGroups"></div>
+<div class="pdf-topic" id="pdfTopic"></div>
+<label class="pdf-load">Load a different PDF<input type="file" id="pdfPick" accept="application/pdf"></label>
+<div class="pub-note">Files load by name: keep <strong>Group 1.pdf</strong>, <strong>Group 2.pdf</strong>, and so on in the same folder as this file, or <a id="pdfOpen" href="Group%201.pdf" target="_blank" rel="noopener">open the current one in a new tab</a>.</div>
+</div>
+</div>
+</div></section>
+<style>
+.pdf-groups{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:10px}
+.pdf-g{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;padding:8px 0;text-align:center;background:var(--surface-card);border:1px solid var(--line);border-radius:6px;color:var(--ink-mid);cursor:pointer;transition:border-color .15s,color .15s}
+.pdf-g:hover{border-color:var(--au-navy-mid)}
+.pdf-g.active{border-color:var(--au-green);color:var(--au-green-deep);box-shadow:inset 0 -2px 0 var(--au-green)}
+.pdf-topic{font-family:"Montserrat",sans-serif;font-size:12.5px;font-weight:700;color:var(--au-navy);line-height:1.35;margin-bottom:10px;min-height:34px}
+body.dark .pdf-topic{color:var(--ink)}
+body.dark .pdf-g{background:var(--surface-card);border-color:rgba(165,172,175,0.2)}
+body.dark .pdf-g.active{color:var(--au-green)}
+</style>
+<script>
+(function(){
+  var pick=document.getElementById('pdfPick'),f=document.getElementById('pdfFrame'),a=document.getElementById('pdfOpen'),wrap=document.getElementById('pdfGroups');
+  if(!f)return;
+  var T=["Turning Up the Heat: Warmed Composites \u2013 Help or Hype?","Restorations in Radiation: Material Choices for Challenging Cases","Preventing White Spots: Are Fluoride Adhesives the Answer?","Polish with Purpose: Surface Finish and Restoration Longevity","Fluoride vs. Biofilm: How Everyday Materials Fight Caries","Implant Surface Innovations: What Really Improves Integration?","Composite Failures and Fixes: Bulk-Fill vs. Traditional Techniques","Impression Confusion: Soft Liners as Impression Materials","Fluoridated Water: Old School Prevention or Still Essential?","Break It or Take It: Best Methods for Removing Indirect Restorations","Matching Nature: Linking Tooth Properties with Material Selection"];
+  var topic=document.getElementById('pdfTopic');
+  function setTopic(n){if(topic)topic.textContent='G'+n+' \u00b7 '+T[n-1];}
+  if(wrap){
+    var html='';for(var n=1;n<=11;n++){html+='<button class="pdf-g'+(n===1?' active':'')+'" data-n="'+n+'" title="'+T[n-1].replace(/"/g,'&quot;')+'">G'+n+'</button>';}
+    wrap.innerHTML=html;
+    setTopic(1);
+    wrap.addEventListener('click',function(e){
+      var b=e.target.closest('.pdf-g'); if(!b)return;
+      var n=+b.dataset.n, url='Group%20'+n+'.pdf';
+      f.setAttribute('src',url+'#view=FitH'); if(a)a.href=url;
+      setTopic(n);
+      Array.prototype.forEach.call(wrap.querySelectorAll('.pdf-g'),function(x){x.classList.toggle('active',x===b);});
+    });
+  }
+  if(pick){
+    pick.addEventListener('change',function(){
+      var file=pick.files&&pick.files[0]; if(!file)return;
+      var url=URL.createObjectURL(file);
+      f.setAttribute('src',url+'#view=FitH'); if(a)a.href=url;
+      if(wrap)Array.prototype.forEach.call(wrap.querySelectorAll('.pdf-g'),function(x){x.classList.remove('active');});if(topic)topic.textContent='Custom file';
+    });
+  }
+})();
+</script>
+
+<!-- 16 EVIDENCE -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Do the Homework</div><div class="content-title reveal d2">Evidence, <em>and where it came from</em></div><div class="content-sub reveal d3">Aim for the highest level of evidence you can find, then show your work: PICO framing, databases, the search string, how many results, and where what you found sits in the hierarchy.</div><div class="info-grid reveal d4"><div class="s-info"><div class="s-info-label">Explain the search, do not just show it</div><div class="s-info-text">The most repeated correction last year was a search strategy slide nobody talked through. Say how you went from thousands of hits to the handful you used, and why those. If you found nothing, say so and identify where your information came from instead.</div></div><div class="s-info"><div class="s-info-label">Go past the sales rep</div><div class="s-info-text">Some of these topics have thin peer-reviewed support. Learn to reach a manufacturer's research team directly for real answers about composition and testing. You will need this in practice, and a chatbot is not a database.</div></div></div></div></section>
+
+<!-- 17 NAVY: FROM 2025 -->
+<section class="slide slide--navy"><div class="chrome-top"></div><div class="slide-inner"><div class="section-kicker reveal d1">Learning from Last Year</div><h2 class="reveal d2">What the 2025<br>Cohort <em>Showed Us</em></h2></div></section>
+
+<!-- 18 WHAT COST POINTS -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Avoid These<span class="kicker-r">One tile per seminar &middot; groups not identified</span></div><div class="content-title reveal d2">What Cost Points <em>Last Year</em></div>
+<div class="rows reveal d3" style="margin-top:18px">
+<div class="row"><div class="row-l">Imprecise terminology and outright scientific errors</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span></div><div class="row-n">10/11</div></div>
+<div class="row"><div class="row-l">Behavioral objectives shown as a slide, not taught as content</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">8/11</div></div>
+<div class="row"><div class="row-l">Crowded slides, small fonts, unreadable figures</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">8/11</div></div>
+<div class="row"><div class="row-l">Claims made without numbers or a level of evidence</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">7/11</div></div>
+<div class="row"><div class="row-l">Decision tree unclear, rushed, or adding nothing</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">6/11</div></div>
+<div class="row"><div class="row-l">Rushed pacing, or running past the time limit</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">6/11</div></div>
+<div class="row"><div class="row-l">References too small to read or too abbreviated to identify</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">5/11</div></div>
+<div class="row"><div class="row-l">Search strategy shown but never explained</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">4/11</div></div>
+</div>
+<div class="content-statement reveal d5" style="max-width:92%">Two more worth naming: bioactive used as a label with no mechanism behind it, in 4 of 11. AI chatbots listed as literature databases, in 2 of 11.</div>
+</div></section>
+
+<!-- 19 WHAT WORKED -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Do These<span class="kicker-r">Same eleven tiles, strengths this time</span></div><div class="content-title reveal d2">What Made a Seminar <em>Land</em></div>
+<div class="rows reveal d3" style="margin-top:18px">
+<div class="row up"><div class="row-l">Individual presenters named as standouts by faculty</div><div class="tiles"><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">7/11</div></div>
+<div class="row up"><div class="row-l">Six Thinking Hats run as a real debate, not a formality</div><div class="tiles"><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">4/11</div></div>
+<div class="row up"><div class="row-l">Spoke to the room and added detail, instead of reading slides</div><div class="tiles"><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">4/11</div></div>
+<div class="row up"><div class="row-l">Original content the group made: bench testing, video, interviews with manufacturers, board members, and patients</div><div class="tiles"><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">4/11</div></div>
+<div class="row up"><div class="row-l">Live audience response: polls and quiz games</div><div class="tiles"><span class="t up"></span><span class="t up"></span><span class="t up"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">3/11</div></div>
+</div>
+<div class="content-statement reveal d5" style="max-width:92%">The strongest reaction of the entire year came from a game-show style review built into the session. Students said it was the first time they had fun in the course.</div>
+</div></section>
+
+<!-- 20 NUMBERS -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">The Numbers</div><div class="content-title reveal d2">Eleven Seminars <em>in Aggregate</em></div>
+<div class="metrics-grid reveal d3" style="margin:14px 0 22px"><div class="metric-card"><div class="metric-big">97.8%</div><div class="metric-label">Highest Seminar</div><div class="metric-sub">3.91 of 4.0</div></div><div class="metric-card"><div class="metric-big">83.0%</div><div class="metric-label">Lowest Seminar</div><div class="metric-sub">3.32 of 4.0</div></div><div class="metric-card"><div class="metric-big">258</div><div class="metric-label">Written Comments</div><div class="metric-sub">141 improvements, 117 strengths</div></div></div>
+<div class="foot-note reveal d3" style="margin:-10px 0 18px">Nine of the eleven seminars landed within three points of each other. These are rubric percentages across seven domains, not course grades.</div>
+<div class="split">
+<div class="reveal d4"><div class="mini-lab">Domain averages, weakest to strongest</div>
+<div class="dbars">
+<div class="db"><div class="db-n">Behavioral Objectives</div><div class="db-tr"><div class="db-f" style="width:33%"></div></div><div class="db-v">92.0%</div></div>
+<div class="db"><div class="db-n">Background and PICO</div><div class="db-tr"><div class="db-f" style="width:38%"></div></div><div class="db-v">92.3%</div></div>
+<div class="db"><div class="db-n">Slide Design</div><div class="db-tr"><div class="db-f" style="width:42%"></div></div><div class="db-v">92.5%</div></div>
+<div class="db"><div class="db-n">Teamwork</div><div class="db-tr"><div class="db-f up" style="width:80%"></div></div><div class="db-v">94.8%</div></div>
+<div class="db"><div class="db-n">Information Clarity</div><div class="db-tr"><div class="db-f up" style="width:88%"></div></div><div class="db-v">95.3%</div></div>
+</div>
+<div class="foot-note">Scaled 90% to 96% so the differences are visible.</div></div>
+<div class="reveal d5"><div class="mini-lab">Rubric items most often flagged</div>
+<div class="rows">
+<div class="row" style="grid-template-columns:1fr 160px 52px;padding:7px 14px"><div class="row-l">Behavioral Objectives</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">7/11</div></div>
+<div class="row" style="grid-template-columns:1fr 160px 52px;padding:7px 14px"><div class="row-l">Summary and Review</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">7/10</div></div>
+<div class="row" style="grid-template-columns:1fr 160px 52px;padding:7px 14px"><div class="row-l">Team Collaboration</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">6/11</div></div>
+<div class="row" style="grid-template-columns:1fr 160px 52px;padding:7px 14px"><div class="row-l">PICO Statement</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">5/11</div></div>
+<div class="row" style="grid-template-columns:1fr 160px 52px;padding:7px 14px"><div class="row-l">Visual Readability</div><div class="tiles"><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t on"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span></div><div class="row-n">5/11</div></div>
+</div>
+<div class="foot-note">Behavioral objectives came out weakest in the scores, the flags, and the written comments at once. Fix that one first.</div></div>
+</div>
+</div></section>
+
+<!-- 21 NAVY: SCHEDULE -->
+<section class="slide slide--navy"><div class="chrome-top"></div><div class="slide-inner"><div class="section-kicker reveal d1">Fall 2026</div><h2 class="reveal d2">Seminar<br><em>Calendar</em></h2></div></section>
+
+<!-- 22 SCHEDULE -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:flex-start;padding-top:48px">
+<div class="slide-kicker reveal d1">Fall 2026</div>
+<div class="content-title reveal d2" style="margin-bottom:8px">Seminar <em>Schedule</em></div>
+<div class="sched-scroll reveal d3">
+<div class="sched-week-label">Week 15 <span class="wdate">October 13</span></div>
+<div class="srow exam-row"><span class="srow-time">9:00 AM to 10:20 AM</span><div class="srow-center"><span class="exam-pill">EXAM</span><span class="srow-topic">Exam #3</span></div><span class="srow-who"></span></div>
+<div class="srow"><span class="srow-time">10:30 AM to 11:50 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 1 &middot; Little Crowns</span></div><span class="srow-who">Dr. Magalh&atilde;es</span></div>
+<div class="sched-week-label">Week 16 <span class="wdate">October 20</span></div>
+<div class="srow"><span class="srow-time">9:00 AM to 10:20 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 2 &middot; Saliva contamination and bonding</span></div><span class="srow-who">Dr. Griffin</span></div>
+<div class="srow"><span class="srow-time">10:30 AM to 11:50 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 3 &middot; Denture bases vs. stomatitis</span></div><span class="srow-who">Dr. Jauregui</span></div>
+<div class="sched-week-label">Week 17 <span class="wdate">October 27</span></div>
+<div class="srow"><span class="srow-time">9:00 AM to 10:20 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 4 &middot; Bleaching and sensitivity</span></div><span class="srow-who">Dr. Frazier</span></div>
+<div class="srow"><span class="srow-time">10:30 AM to 11:50 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 5 &middot; The BPA question</span></div><span class="srow-who">Prof. Christman</span></div>
+<div class="sched-week-label">Week 18 <span class="wdate">November 3</span></div>
+<div class="srow"><span class="srow-time">9:00 AM to 10:20 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 6 &middot; Lithium disilicate vs. zirconia</span></div><span class="srow-who">Dr. Manhiani &amp; Dr. Robles-Moreno</span></div>
+<div class="srow"><span class="srow-time">10:30 AM to 11:50 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 7 &middot; Post and core</span></div><span class="srow-who">Dr. Haeberle</span></div>
+<div class="sched-week-label">Week 19 <span class="wdate">November 10</span></div>
+<div class="srow"><span class="srow-time">9:00 AM to 10:20 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 8 &middot; Blue-light hazard</span></div><span class="srow-who">Dr. Rueggeberg</span></div>
+<div class="srow"><span class="srow-time">10:30 AM to 11:50 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 9 &middot; Digital vs. conventional impressions</span></div><span class="srow-who">Dr. Britton &amp; Dr. Harris</span></div>
+<div class="sched-week-label">Week 20 <span class="wdate">November 17</span></div>
+<div class="srow"><span class="srow-time">9:00 AM to 10:20 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 10 &middot; Dentin and the hybrid layer</span></div><span class="srow-who">Dr. Messer</span></div>
+<div class="srow"><span class="srow-time">10:30 AM to 11:50 AM</span><div class="srow-center"><span class="srow-topic">BMCS Group 11 &middot; Photobiomodulation</span></div><span class="srow-who">Dr. Bachand</span></div>
+<div class="sched-divider"><span>Exam #4 &middot; BMCS</span></div>
+<div class="sched-week-label">Week 21 <span class="wdate">December 1</span></div>
+<div class="srow exam-row"><span class="srow-time">9:00 AM to 11:50 AM</span><div class="srow-center"><span class="exam-pill">EXAM</span><span class="srow-topic">Exam #4 &middot; 22 questions, two from each group</span></div><span class="srow-who"></span></div>
+<div style="margin-top:16px;padding:14px 20px;background:var(--surface-muted);border-radius:6px">
+<div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--au-green);margin-bottom:6px">Your Group Deadlines</div>
+<div style="font-size:15px;color:var(--ink-mid);line-height:1.6">First meeting with your facilitator: <strong style="color:var(--ink)">four to five weeks before</strong> you present. Responses and draft deck to faculty: <strong style="color:var(--ink)">the Monday one week before</strong>. Final version posted in D2L: <strong style="color:var(--ink)">the Sunday before, 5:00 PM</strong>.</div>
+</div>
+</div></div></section>
+
+<!-- 23 ASSESSMENT -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Assessment</div><div class="content-title reveal d2">What the Seminars Are <em>Worth</em></div><div class="content-body reveal d3">The course runs on 212 points. Counting the rubrics, the quizzes they generate, and Exam #4, the seminars account for <strong>93 of them</strong>.</div>
+<div class="stack reveal d4"><div class="sseg s1" style="width:23.6%">Group rubric 50</div><div class="sseg s2" style="width:4.7%">10</div><div class="sseg s3" style="width:15.6%">Quiz + Exam #4 &middot; 33</div><div class="sseg s4" style="width:56.1%">Rest of the course 119</div></div>
+<div class="legend reveal d4"><span class="lg"><i style="background:var(--au-navy)"></i>Group presentation rubric, 50 points</span><span class="lg"><i style="background:var(--au-navy-mid)"></i>Intra-group peer review, 10 points</span><span class="lg"><i style="background:var(--au-green-deep)"></i>11 quiz questions and 22 on Exam #4</span></div>
+<div class="info-grid reveal d5" style="margin-top:22px"><div class="s-info"><div class="s-info-label">Group presentation rubric</div><div class="s-info-text">The facilitator, the course director, and every attending faculty member each score you on the 2026 rubric, comments included. The next slide shows it.</div></div><div class="s-info"><div class="s-info-label">Peer review</div><div class="s-info-text">The facilitator and every group member complete the peer review rubric. Your teammates' effort is graded by the people who worked with them.</div></div></div>
+</div></section>
+
+<!-- 23B RUBRIC -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">The Group Rubric &middot; 2026<span class="kicker-r">Live and clickable &middot; what faculty hold on seminar day</span></div><div class="content-title reveal d2" style="margin-bottom:4px">Eight Domains, <em>50 Points</em></div><div class="content-sub reveal d2" style="margin-bottom:6px;max-width:100%">Faculty score it on their phones while you present. Twenty-two criteria, five defined levels each, all written out. Scroll inside the phone; read the levels before you build the deck, not after.</div>
+<div class="rub-wrap reveal d3">
+<div class="rub-phone"><div class="rub-status"></div><div class="rub-notch"></div><div class="rub-screen"><iframe src="BMCS_Rubric_2026.html" title="BMCS 2026 group rubric" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe></div></div>
+<div>
+<div class="mini-lab">Domain weights</div>
+<div class="dbars" style="margin-bottom:14px">
+<div class="db"><div class="db-n">Materials Science <span class="new-pill" style="background:var(--au-navy);color:#fff">flagship</span></div><div class="db-tr"><div class="db-f up" style="width:100%"></div></div><div class="db-v">25%</div></div>
+<div class="db"><div class="db-n">Background and Literature</div><div class="db-tr"><div class="db-f" style="width:60%"></div></div><div class="db-v">15%</div></div>
+<div class="db"><div class="db-n">Clarity and Organization</div><div class="db-tr"><div class="db-f" style="width:60%"></div></div><div class="db-v">15%</div></div>
+<div class="db"><div class="db-n">Clinical Application</div><div class="db-tr"><div class="db-f" style="width:60%"></div></div><div class="db-v">15%</div></div>
+<div class="db"><div class="db-n">Behavioral Objectives</div><div class="db-tr"><div class="db-f" style="width:30%"></div></div><div class="db-v">7.5%</div></div>
+<div class="db"><div class="db-n">Collaboration and Professionalism</div><div class="db-tr"><div class="db-f" style="width:30%"></div></div><div class="db-v">7.5%</div></div>
+<div class="db"><div class="db-n">Creativity and Engagement</div><div class="db-tr"><div class="db-f" style="width:30%"></div></div><div class="db-v">7.5%</div></div>
+<div class="db"><div class="db-n">Critical Thinking <span class="new-pill">new</span></div><div class="db-tr"><div class="db-f" style="width:30%"></div></div><div class="db-v">7.5%</div></div>
+</div>
+<div class="s-info" style="border-left:3px solid var(--au-green);margin-bottom:12px"><div class="s-info-text"><strong>Materials Science carries a quarter of the grade.</strong> Name the property, give the number, cite the level of evidence. <strong>Behavioral Objectives</strong> are scored three times: stated at the start, taught in the middle, reviewed at the end. <strong>Critical Thinking</strong> is new, and your Six Thinking Hats block feeds it directly.</div></div>
+<a class="rub-ext" href="BMCS_Rubric_2026.html" target="_blank" rel="noopener">Open full size &#8599;</a>
+</div>
+</div>
+</div></section>
+
+<!-- 24 PUBLICATIONS -->
+<section class="slide slide--white"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:flex-start;padding-top:52px"><div class="slide-kicker reveal d1">Beyond the Grade<span class="kicker-r">Student authors first</span></div><div class="content-title reveal d2" style="margin-bottom:4px">Some of This Work <em>Gets Published</em></div><div class="content-sub reveal d2" style="margin-bottom:14px;max-width:100%">Keep going with your facilitator after the seminar and the literature review can become an article with your name on it. Click a title to read it here.</div>
+<div class="pub-wrap reveal d3">
+<div class="pub-frame"><iframe id="pubFrame" src="https://lsc-pagepro.mydigitalpublication.com/publication/?i=868912&amp;p=1&amp;view=issueViewer" title="Digital issue viewer" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<div class="pub-side">
+<button class="pubsel active" data-url="https://lsc-pagepro.mydigitalpublication.com/publication/?i=868912&amp;p=1&amp;view=issueViewer"><span>Inside Dentistry &middot; September 2026</span>Removal of Bonded Ceramic Restorations: A Guide to Technique Selection<em>Mancao, Khorashahi, O&rsquo;Donnell, Walden, Harris, Britton, Pacheco</em></button>
+<button class="pubsel" data-url="https://lsc-pagepro.mydigitalpublication.com/publication/?i=864007&amp;p=1&amp;view=issueViewer"><span>Inside Dentistry CE &middot; 2026</span>Turning Up the Heat: Warmed Composites, Help or Hype?<em>Parviainen, Graham, Zhao, Rhoad, Rueggeberg</em></button>
+<button class="pubsel" data-url="https://lsc-pagepro.mydigitalpublication.com/publication/?i=855733&amp;p=6&amp;view=issueViewer"><span>Inside Dentistry CE &middot; 2025</span>Overview of Sports Mouth Guards<em>Thompson, Bryans Jackson, Rueggeberg</em></button>
+<button class="pubsel" data-url="https://lsc-pagepro.mydigitalpublication.com/publication/?i=849844&amp;p=6&amp;view=issueViewer"><span>Inside Dentistry &middot; 2025</span>3D Printing in Restorative Dentistry<em>Shon, Songer, Burns, Pacheco, Hood</em></button>
+<div class="pub-more">
+<div class="pub-more-lab">Also from these groups</div>
+<div class="pub-more-row"><span class="tbd">In press</span>Head and Neck Radiation Patients <em>&middot; Oct 2026</em></div>
+<div class="pub-more-row"><span class="tbd tbd--sm">Published</span>Remineralization and Demineralization <em>&middot; Decisions in Dentistry</em></div>
+<div class="pub-more-row"><span class="tbd tbd--sm">In review</span>Two more manuscripts under submission</div>
+</div>
+<div class="pub-note">Viewer not loading? <a id="pubOpen" href="https://lsc-pagepro.mydigitalpublication.com/publication/?i=868912&amp;p=1&amp;view=issueViewer" target="_blank" rel="noopener">Open the issue in a new tab</a>.</div>
+</div>
+</div>
+</div></section>
+<script>
+(function(){
+  var f=document.getElementById('pubFrame'),open=document.getElementById('pubOpen'),
+      btns=[].slice.call(document.querySelectorAll('.pubsel'));
+  if(!f)return;
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var u=b.getAttribute('data-url');
+    if(f.getAttribute('src')!==u)f.setAttribute('src',u);
+    if(open)open.href=u;
+    btns.forEach(function(x){x.classList.toggle('active',x===b);});
+  });});
+})();
+</script>
+
+<!-- 25 START NOW -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">What Now</div><div class="content-title reveal d2">Between Now and <em>Your Date</em></div><div class="content-sub reveal d3">Group 1 presents October 13; Group 11 on November 17. The groups that did best last year met every week and were reading in September. Every complaint about a facilitator last year came down to no meetings or no follow-up, and the fix is the same from your side: ask.</div>
+<div class="steps reveal d4">
+<div class="step"><div class="step-n">01</div><div><div class="step-t">Confirm the plan</div><div class="step-d">Your facilitator has your topic and will send the five behavioral objectives. If the first meeting is not on the calendar, your group leader emails them this week.</div></div></div>
+<div class="step"><div class="step-n">02</div><div><div class="step-t">Meet weekly</div><div class="step-d">Fifteen minutes, in person or online. Group leader submits; subgroups own one objective each; everyone owns the terminology.</div></div></div>
+<div class="step"><div class="step-n">03</div><div><div class="step-t">Search, then show the search</div><div class="step-d">PICO, databases, strings, counts, hierarchy. Emily Harris in the library will help you build it. Manufacturers take weeks to answer.</div></div></div>
+<div class="step"><div class="step-n">04</div><div><div class="step-t">Hit the two deadlines</div><div class="step-d">Monday one week out: deck and written responses to Dr. Pacheco, Dr. Rueggeberg, and your facilitator. Sunday 5:00 PM: final version in D2L.</div></div></div>
+</div>
+</div></section>
+
+<!-- 26 CLOSING -->
+<section class="slide slide--navy"><div class="chrome-top"></div><div class="slide-inner" style="justify-content:center"><div class="closing-kicker reveal d1">BMCS &middot; BioMaterials Clinical Seminars</div><h2 class="closing-title reveal d2">Muito obrigado</h2><div class="closing-line reveal d3"></div><div class="closing-meta reveal d4"><div class="cm-block"><span class="cm-label">Course Director</span><span class="cm-value">Rafael Rocha Pacheco, DDS, MSc, PhD</span></div><div class="cm-block"><span class="cm-label">Contact</span><span class="cm-value">GC 5222 | RAPACHECO@augusta.edu</span></div><div class="cm-block"><span class="cm-label">First seminar</span><span class="cm-value">Group 1, October 13, GB 1120</span></div></div></div></section>
+
+</div>
+
+<nav class="nav-controls"><button class="nav-btn" id="prev">&larr;</button><div class="nav-dots" id="dots"></div><span class="nav-counter"><span class="current" id="counter-current">01</span> / <span id="counter-total">23</span></span><button class="nav-btn" id="next">&rarr;</button></nav>
+<button class="theme-btn" id="theme-toggle" title="Toggle dark mode"><svg class="moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg class="sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></button>
+<button class="fs-btn" id="fullscreen" title="Fullscreen"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 9 4 4 9 4"></polyline><polyline points="15 4 20 4 20 9"></polyline><polyline points="20 15 20 20 15 20"></polyline><polyline points="9 20 4 20 4 15"></polyline></svg></button>
+
+<script>
+(function(){
+  let current=0;const slides=document.querySelectorAll('.slide'),dotsEl=document.getElementById('dots'),curEl=document.getElementById('counter-current'),totEl=document.getElementById('counter-total');
+  function buildDots(){dotsEl.innerHTML='';slides.forEach((_,i)=>{const d=document.createElement('button');d.className='nav-dot'+(i===current?' active':'');d.addEventListener('click',()=>goTo(i));dotsEl.appendChild(d)});totEl.textContent=String(slides.length).padStart(2,'0');curEl.textContent=String(current+1).padStart(2,'0')}
+  function goTo(idx){if(idx<0||idx>=slides.length||idx===current)return;const out=slides[current],inc=slides[idx];out.classList.remove('active');out.classList.add('prev');inc.classList.add('active','entering');void inc.offsetWidth;inc.classList.remove('entering');setTimeout(()=>out.classList.remove('prev'),520);dotsEl.querySelectorAll('.nav-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));current=idx;curEl.textContent=String(current+1).padStart(2,'0')}
+  window.goTo=goTo;
+  slides[0].classList.add('active');buildDots();
+  document.getElementById('prev').addEventListener('click',()=>goTo(current-1));
+  document.getElementById('next').addEventListener('click',()=>goTo(current+1));
+  document.getElementById('fullscreen').addEventListener('click',()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()});
+  document.getElementById('theme-toggle').addEventListener('click',()=>{document.body.classList.toggle('dark')});
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();goTo(current+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();goTo(current-1)}else if(e.key==='Home')goTo(0);else if(e.key==='End')goTo(slides.length-1);else if(e.key==='f'||e.key==='F'){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()}});
+  let tx=0;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50){dx<0?goTo(current+1):goTo(current-1)}},{passive:true});
+})();
+</script>
+</body>
+</html>

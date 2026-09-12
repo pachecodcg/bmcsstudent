@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMCS Evaluation | RSDM 5511</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003359;
+            --primary-light: #0a4a7c;
+            --accent: #22c55e;
+            --text: #1a1a1a;
+            --text-secondary: #6b7280;
+            --border: #e5e7eb;
+            --bg: #fafafa;
+            --white: #ffffff;
+            
+            --excellent: #003359;
+            --good: #16a34a;
+            --satisfactory: #ca8a04;
+            --needs-improvement: #ea580c;
+            --unacceptable: #dc2626;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .header-title {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+        
+        .header h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+        
+        .header-badge {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        .header-info {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .field {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .field label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .field input, .field select {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: var(--white);
+            transition: border-color 0.2s;
+        }
+        
+        .field input:focus, .field select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .field input { width: 160px; }
+        .field input[readonly] { background: var(--bg); color: var(--text-secondary); }
+        .field select { min-width: 80px; cursor: pointer; }
+        
+        /* Score Panel */
+        .score-panel {
+            position: fixed;
+            top: 100px;
+            right: 32px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            width: 200px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 40px rgba(0,0,0,0.08);
+            z-index: 200;
+        }
+        
+        .score-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        
+        .score-main {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+        
+        .score-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+        
+        .score-max {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .grade-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: var(--bg);
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+        
+        .grade-excellent { background: var(--excellent); color: white; }
+        .grade-good { background: var(--good); color: white; }
+        .grade-satisfactory { background: var(--satisfactory); color: white; }
+        .grade-needs-improvement { background: var(--needs-improvement); color: white; }
+        .grade-unacceptable { background: var(--unacceptable); color: white; }
+        
+        .progress-track {
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .progress-text {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Main Content */
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px;
+            padding-right: 260px;
+        }
+        
+        /* Domain */
+        .domain {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        
+        .domain-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .domain-header.flagship {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .domain-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        
+        .domain-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .domain-weight {
+            font-size: 0.75rem;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+        
+        .domain-score {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: rgba(255,255,255,0.15);
+            padding: 4px 12px;
+            border-radius: 4px;
+            min-width: 48px;
+            text-align: center;
+        }
+        
+        /* Criterion */
+        .criterion {
+            display: grid;
+            grid-template-columns: 170px 1fr 56px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .criterion:last-child { border-bottom: none; }
+        
+        .criterion-name {
+            padding: 14px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            border-right: 1px solid var(--border);
+        }
+        
+        .descriptors {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
+        .desc {
+            padding: 12px;
+            font-size: 0.78rem;
+            line-height: 1.5;
+            cursor: pointer;
+            border-right: 1px solid var(--border);
+            transition: background 0.15s;
+            background: var(--white);
+        }
+        
+        .desc:last-child { border-right: none; }
+        .desc:hover { background: var(--bg); }
+        
+        .desc.selected {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .desc-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.72rem;
+        }
+        
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .desc-5 .dot { background: var(--excellent); }
+        .desc-4 .dot { background: var(--good); }
+        .desc-3 .dot { background: var(--satisfactory); }
+        .desc-2 .dot { background: var(--needs-improvement); }
+        .desc-1 .dot { background: var(--unacceptable); }
+        
+        .desc-5 .desc-header { color: var(--excellent); }
+        .desc-4 .desc-header { color: var(--good); }
+        .desc-3 .desc-header { color: var(--satisfactory); }
+        .desc-2 .desc-header { color: var(--needs-improvement); }
+        .desc-1 .desc-header { color: var(--unacceptable); }
+        
+        .desc.selected .desc-header { color: white; }
+        .desc.selected .dot { background: white; }
+        
+        .criterion-score {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            border-left: 1px solid var(--border);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .criterion-score.empty { color: #d1d5db; }
+        
+        /* Mobile */
+        .criterion-mobile { display: none; }
+        
+        /* Feedback */
+        .feedback {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .feedback h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        
+        .feedback p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        
+        .feedback textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            resize: vertical;
+            transition: border-color 0.2s;
+        }
+        
+        .feedback textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Actions */
+        .actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-light); }
+        .btn-secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+        .btn-accent { background: var(--accent); color: white; }
+        .btn-accent:hover { filter: brightness(1.05); }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+        
+        .footer-brand {
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+            margin-top: 12px;
+        }
+        
+        .footer-brand span {
+            width: 24px;
+            height: 3px;
+            border-radius: 2px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1280px) {
+            .main { padding-right: 24px; }
+            .score-panel {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto 20px;
+            }
+            .criterion { grid-template-columns: 140px 1fr 48px; }
+            .desc { padding: 10px 8px; font-size: 0.72rem; }
+        }
+        
+        @media (max-width: 768px) {
+            html, body { overflow-x: hidden; }
+            .header { position: relative; padding: 12px 14px 14px; }
+            .main, .header, .score-panel { max-width: 100%; box-sizing: border-box; }
+            .main { padding: 12px 14px 24px; }
+            .header-top { flex-direction: column; align-items: stretch; gap: 6px; margin-bottom: 14px; }
+            /* stop the title from wrapping one word per line inside a phone width */
+            .header-title { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .header h1 { font-size: 1.02rem; line-height: 1.25; letter-spacing: -0.01em; white-space: normal; }
+            .header-badge { font-size: 0.66rem; padding: 3px 8px; align-self: flex-start; }
+            .header-info { flex-direction: column; gap: 8px; }
+            .field { width: 100%; justify-content: space-between; align-items: center; gap: 10px; }
+            .field label { flex: none; font-size: 0.72rem; }
+            .field input, .field select { flex: 1; min-width: 0; max-width: 60%; font-size: 0.82rem; padding: 7px 9px; }
+            .field select { min-width: 0; }
+            .score-panel { max-width: 100% !important; margin: 0 0 16px !important; }
+            
+            .main { padding: 16px; }
+            .domain-header { padding: 12px 16px; }
+            .domain-name { font-size: 0.9rem; }
+            
+            .criterion { display: none; }
+            
+            .criterion-mobile {
+                display: block;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .criterion-mobile:last-child { border-bottom: none; }
+            
+            .mobile-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 14px 16px;
+                background: var(--bg);
+                cursor: pointer;
+            }
+            
+            .mobile-header.open { background: #f0f4f8; }
+            
+            .mobile-name {
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: var(--primary);
+            }
+            
+            .mobile-meta { display: flex; align-items: center; gap: 10px; }
+            
+            .mobile-score {
+                background: var(--primary);
+                color: white;
+                padding: 5px 12px;
+                border-radius: 4px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                min-width: 40px;
+                text-align: center;
+            }
+            
+            .mobile-score.empty { background: #d1d5db; color: #6b7280; }
+            
+            .mobile-arrow {
+                color: var(--text-secondary);
+                transition: transform 0.2s;
+            }
+            
+            .mobile-header.open .mobile-arrow { transform: rotate(180deg); }
+            
+            .mobile-options { display: none; }
+            .mobile-options.show { display: block; }
+            
+            .mobile-opt {
+                display: flex;
+                gap: 12px;
+                padding: 12px 16px;
+                border-bottom: 1px solid var(--border);
+                cursor: pointer;
+                background: var(--white);
+            }
+            
+            .mobile-opt:last-child { border-bottom: none; }
+            .mobile-opt:active { background: var(--bg); }
+            
+            .mobile-opt.selected {
+                background: var(--primary);
+                color: white;
+            }
+            
+            .mobile-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                margin-top: 5px;
+            }
+            
+            .mobile-opt.opt-5 .mobile-dot { background: var(--excellent); }
+            .mobile-opt.opt-4 .mobile-dot { background: var(--good); }
+            .mobile-opt.opt-3 .mobile-dot { background: var(--satisfactory); }
+            .mobile-opt.opt-2 .mobile-dot { background: var(--needs-improvement); }
+            .mobile-opt.opt-1 .mobile-dot { background: var(--unacceptable); }
+            
+            .mobile-opt.selected .mobile-dot { background: white; }
+            
+            .mobile-content { flex: 1; }
+            
+            .mobile-label {
+                font-weight: 600;
+                font-size: 0.85rem;
+                margin-bottom: 2px;
+            }
+            
+            .mobile-opt.opt-5 .mobile-label { color: var(--excellent); }
+            .mobile-opt.opt-4 .mobile-label { color: var(--good); }
+            .mobile-opt.opt-3 .mobile-label { color: var(--satisfactory); }
+            .mobile-opt.opt-2 .mobile-label { color: var(--needs-improvement); }
+            .mobile-opt.opt-1 .mobile-label { color: var(--unacceptable); }
+            
+            .mobile-opt.selected .mobile-label { color: white; }
+            
+            .mobile-text { font-size: 0.85rem; line-height: 1.4; }
+            .mobile-opt.selected .mobile-text { opacity: 0.9; }
+            
+            .score-panel { margin: 16px; max-width: none; }
+            .score-value { font-size: 2.5rem; }
+            .actions { flex-wrap: wrap; padding: 16px; }
+            .btn { flex: 1; min-width: 100px; }
+        }
+        
+        @media print {
+            .score-panel { position: relative; margin: 20px auto; box-shadow: none; border: 1px solid var(--border); }
+            .main { padding-right: 24px; }
+            .actions { display: none; }
+            .domain { page-break-inside: avoid; }
+            .header { position: relative; }
+            .criterion { display: grid !important; }
+            .criterion-mobile { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-top">
+                <div class="header-title">
+                    <h1>Biomaterials Clinical Seminars</h1>
+                    <span class="header-badge">RSDM 5511 · DCG at Augusta University</span>
+                </div>
+            </div>
+            <div class="header-info">
+                <div class="field">
+                    <label>Group</label>
+                    <select id="groupNum" onchange="updateTopic()">
+                        <option value="">—</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Topic</label>
+                    <input type="text" id="topicName" readonly placeholder="Select group...">
+                </div>
+                <div class="field">
+                    <label>Evaluator</label>
+                    <select id="evaluatorSelect">
+                        <option value="">Select your name...</option>
+                        <option value="Dr. Bill Bachand">Bachand, Bill</option>
+                        <option value="Dr. Eduardo Britton">Britton, Eduardo</option>
+                        <option value="Prof. Ashley Christman">Christman, Ashley</option>
+                        <option value="Dr. Kevin Frazier">Frazier, Kevin</option>
+                        <option value="Dr. Gregory Griffin">Griffin, Gregory</option>
+                        <option value="Dr. Brent Haeberle">Haeberle, Brent</option>
+                        <option value="Dr. Ronald Harris">Harris, Ronald</option>
+                        <option value="Dr. Catherine Jauregui">Jauregui, Catherine</option>
+                        <option value="Dr. Gabriela Magalhaes">Magalhaes, Gabriela</option>
+                        <option value="Dr. Marlina Manhiani">Manhiani, Marlina</option>
+                        <option value="Dr. Regina Messer">Messer, Regina</option>
+                        <option value="Dr. Rafael Pacheco">Pacheco, Rafael</option>
+                        <option value="Dr. Marlen Robles-Moreno">Robles-Moreno, Marlen</option>
+                        <option value="Dr. Frederick Rueggeberg">Rueggeberg, Frederick</option>
+                        <option value="__other__">Other (type below)</option>
+                    </select>
+                    <input type="text" id="evaluatorName" placeholder="Your name" style="display:none;margin-top:6px">
+                </div>
+                <div class="field">
+                    <label>Date</label>
+                    <input type="date" id="evalDate">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <aside class="score-panel">
+        <div class="score-label">Final Score</div>
+        <div class="score-main">
+            <span class="score-value" id="finalScore">—</span>
+            <span class="score-max">/ 50</span>
+        </div>
+        <div class="grade-badge" id="gradeBadge">Not Scored</div>
+        <div class="progress-track">
+            <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+        </div>
+        <div class="progress-text"><span id="progressCount">0</span> of 22 criteria</div>
+    </aside>
+    
+    <main class="main" id="rubricMain"></main>
+    
+    <script>
+        const groupTopics = {
+            "1": "Topic for Group 1",
+            "2": "Topic for Group 2",
+            "3": "Topic for Group 3",
+            "4": "Topic for Group 4",
+            "5": "Topic for Group 5",
+            "6": "Topic for Group 6",
+            "7": "Topic for Group 7",
+            "8": "Topic for Group 8",
+            "9": "Topic for Group 9",
+            "10": "Topic for Group 10",
+            "11": "Topic for Group 11"
+        };
+        
+        const rubricData = {
+            domains: [
+                {
+                    id: 1, name: "Background & Literature", weight: 15, flagship: false, isNew: false,
+                    criteria: [
+                        { id: "1.1", name: "Background", desc: [
+                            { s: 5, l: "Excellent", t: "Thorough, well-scoped background that sets context effectively." },
+                            { s: 4, l: "Good", t: "Adequate background; provides necessary context." },
+                            { s: 3, l: "Satisfactory", t: "Basic background; some gaps in context." },
+                            { s: 2, l: "Needs Improvement", t: "Background superficial or includes irrelevant information." },
+                            { s: 1, l: "Unacceptable", t: "Background absent or misleading." }
+                        ]},
+                        { id: "1.2", name: "PICO & Evidence", desc: [
+                            { s: 5, l: "Excellent", t: "PICO verbally explained component by component; highest level evidence; sources ≤5 years." },
+                            { s: 4, l: "Good", t: "PICO explained with context; good evidence; mostly current sources." },
+                            { s: 3, l: "Satisfactory", t: "PICO shown but not fully explained; adequate evidence; some outdated." },
+                            { s: 2, l: "Needs Improvement", t: "PICO shown without explanation; lower evidence quality." },
+                            { s: 1, l: "Unacceptable", t: "No PICO or just displayed without any discussion." }
+                        ]},
+                        { id: "1.3", name: "Interpretation", desc: [
+                            { s: 5, l: "Excellent", t: "Correct interpretation; acknowledges limitations; synthesizes findings." },
+                            { s: 4, l: "Good", t: "Mostly correct with reasonable conclusions." },
+                            { s: 3, l: "Satisfactory", t: "Some misinterpretation or overstatement." },
+                            { s: 2, l: "Needs Improvement", t: "Notable misinterpretation of findings." },
+                            { s: 1, l: "Unacceptable", t: "Significant misinterpretation or none provided." }
+                        ]}
+                    ]
+                },
+                {
+                    id: 2, name: "Behavioral Objectives", weight: 7.5, flagship: false, isNew: false,
+                    criteria: [
+                        { id: "2.1", name: "BOs at Start", desc: [
+                            { s: 5, l: "Excellent", t: "Each BO read aloud and explained; audience understands what they will learn." },
+                            { s: 4, l: "Good", t: "BOs stated and briefly explained at beginning." },
+                            { s: 3, l: "Satisfactory", t: "BOs read aloud but not explained; audience left to interpret." },
+                            { s: 2, l: "Needs Improvement", t: "BOs shown on slide but not verbally addressed." },
+                            { s: 1, l: "Unacceptable", t: "BOs not introduced or just flashed on screen." }
+                        ]},
+                        { id: "2.2", name: "BOs During", desc: [
+                            { s: 5, l: "Excellent", t: "Each BO explicitly referenced; clear signposting throughout." },
+                            { s: 4, l: "Good", t: "Most BOs referenced during content." },
+                            { s: 3, l: "Satisfactory", t: "Inconsistent referencing of BOs." },
+                            { s: 2, l: "Needs Improvement", t: "Minimal BO referencing during body." },
+                            { s: 1, l: "Unacceptable", t: "No reference to BOs during presentation." }
+                        ]},
+                        { id: "2.3", name: "BOs at End", desc: [
+                            { s: 5, l: "Excellent", t: "Each BO revisited with a clear, concise answer based on presented evidence." },
+                            { s: 4, l: "Good", t: "BOs reviewed with adequate answers connecting to content." },
+                            { s: 3, l: "Satisfactory", t: "BOs restated but answers vague or too brief." },
+                            { s: 2, l: "Needs Improvement", t: "BOs shown again but not actually answered." },
+                            { s: 1, l: "Unacceptable", t: "No BO review or just re-displayed without discussion." }
+                        ]}
+                    ]
+                },
+                {
+                    id: 3, name: "Clarity & Organization", weight: 15, flagship: false, isNew: false,
+                    criteria: [
+                        { id: "3.1", name: "Logical Flow", desc: [
+                            { s: 5, l: "Excellent", t: "Very clear, polished, and well-organized throughout." },
+                            { s: 4, l: "Good", t: "Clear and mostly well-organized." },
+                            { s: 3, l: "Satisfactory", t: "Understandable with some organization issues." },
+                            { s: 2, l: "Needs Improvement", t: "Difficult to follow in places." },
+                            { s: 1, l: "Unacceptable", t: "Hard to follow; not organized." }
+                        ]},
+                        { id: "3.2", name: "Visual Design", desc: [
+                            { s: 5, l: "Excellent", t: "Professional design; every table/figure verbally explained and connected to topic." },
+                            { s: 4, l: "Good", t: "Consistent design; most visuals explained with context." },
+                            { s: 3, l: "Satisfactory", t: "Adequate visuals; some shown without explanation." },
+                            { s: 2, l: "Needs Improvement", t: "Visuals displayed but rarely explained; audience left confused." },
+                            { s: 1, l: "Unacceptable", t: "Visuals shown without any explanation or context." }
+                        ]},
+                        { id: "3.3", name: "Time Management", desc: [
+                            { s: 5, l: "Excellent", t: "Within ±1 min; well-paced throughout." },
+                            { s: 4, l: "Good", t: "Within ±5 min; adequate pacing." },
+                            { s: 3, l: "Satisfactory", t: "Within ±10 min; noticeable pacing issues." },
+                            { s: 2, l: "Needs Improvement", t: "Over 10 min off; significant pacing problems." },
+                            { s: 1, l: "Unacceptable", t: "Severely over/under time; disruptive pacing." }
+                        ]}
+                    ]
+                },
+                {
+                    id: 4, name: "Collaboration & Professionalism", weight: 7.5, flagship: false, isNew: false,
+                    criteria: [
+                        { id: "4.1", name: "Team Coordination", desc: [
+                            { s: 5, l: "Excellent", t: "Very effective teamwork; seamless transitions; clearly rehearsed." },
+                            { s: 4, l: "Good", t: "Strong teamwork; mostly smooth transitions." },
+                            { s: 3, l: "Satisfactory", t: "Adequate teamwork; some awkward transitions." },
+                            { s: 2, l: "Needs Improvement", t: "Inadequate coordination; sections feel disconnected." },
+                            { s: 1, l: "Unacceptable", t: "No coordination; feels like separate presentations." }
+                        ]},
+                        { id: "4.2", name: "Equal Participation", desc: [
+                            { s: 5, l: "Excellent", t: "All members present confidently; equal participation evident." },
+                            { s: 4, l: "Good", t: "Most members present well; reasonably balanced." },
+                            { s: 3, l: "Satisfactory", t: "Uneven participation; some contribute minimally." },
+                            { s: 2, l: "Needs Improvement", t: "Notable imbalance; some members struggle." },
+                            { s: 1, l: "Unacceptable", t: "One or few carry entire presentation." }
+                        ]},
+                        { id: "4.3", name: "Q&A Response", desc: [
+                            { s: 5, l: "Excellent", t: "Fields questions confidently; demonstrates deep understanding." },
+                            { s: 4, l: "Good", t: "Adequate responses; demonstrates familiarity." },
+                            { s: 3, l: "Satisfactory", t: "Struggles with some questions; surface-level responses." },
+                            { s: 2, l: "Needs Improvement", t: "Difficulty with most questions." },
+                            { s: 1, l: "Unacceptable", t: "Unable to answer basic questions." }
+                        ]}
+                    ]
+                },
+                {
+                    id: 5, name: "Creativity & Engagement", weight: 7.5, flagship: false, isNew: false,
+                    criteria: [
+                        { id: "5.1", name: "Audience Engagement", desc: [
+                            { s: 5, l: "Excellent", t: "Highly engaging; captures and maintains attention throughout." },
+                            { s: 4, l: "Good", t: "Engaging; holds audience interest well." },
+                            { s: 3, l: "Satisfactory", t: "Moderately engaging; some loss of attention." },
+                            { s: 2, l: "Needs Improvement", t: "Limited engagement; audience disengaged." },
+                            { s: 1, l: "Unacceptable", t: "Not engaging; audience attention lost." }
+                        ]},
+                        { id: "5.2", name: "Creative Approach", desc: [
+                            { s: 5, l: "Excellent", t: "Highly creative and original approach to presenting material." },
+                            { s: 4, l: "Good", t: "Creative elements that enhance the presentation." },
+                            { s: 3, l: "Satisfactory", t: "Some creativity; mostly standard approach." },
+                            { s: 2, l: "Needs Improvement", t: "Minimal creativity; generic presentation." },
+                            { s: 1, l: "Unacceptable", t: "No creativity; uninspired delivery." }
+                        ]}
+                    ]
+                },
+                {
+                    id: 6, name: "Clinical Application", weight: 15, flagship: false, isNew: false,
+                    criteria: [
+                        { id: "6.1", name: "Indications", desc: [
+                            { s: 5, l: "Excellent", t: "Comprehensive, evidence-based, with clear clinical rationale." },
+                            { s: 4, l: "Good", t: "Main points stated with supporting evidence." },
+                            { s: 3, l: "Satisfactory", t: "Some indications mentioned, limited detail." },
+                            { s: 2, l: "Needs Improvement", t: "Vague or incomplete clinical guidance." },
+                            { s: 1, l: "Unacceptable", t: "Absent or incorrect guidance." }
+                        ]},
+                        { id: "6.2", name: "Clinical Cases", desc: [
+                            { s: 5, l: "Excellent", t: "Highly realistic, complex cases illustrating decision-making." },
+                            { s: 4, l: "Good", t: "Relevant cases that support the topic well." },
+                            { s: 3, l: "Satisfactory", t: "Basic cases, partially connected to topic." },
+                            { s: 2, l: "Needs Improvement", t: "Cases simplistic or tangentially related." },
+                            { s: 1, l: "Unacceptable", t: "No case presented or irrelevant." }
+                        ]},
+                        { id: "6.3", name: "Technique & Protocol", desc: [
+                            { s: 5, l: "Excellent", t: "Clear step-by-step protocol with science-based rationale." },
+                            { s: 4, l: "Good", t: "Protocol presented with adequate rationale." },
+                            { s: 3, l: "Satisfactory", t: "Protocol mentioned but incomplete." },
+                            { s: 2, l: "Needs Improvement", t: "Protocol unclear or lacking rationale." },
+                            { s: 1, l: "Unacceptable", t: "No technique guidance when expected." }
+                        ]}
+                    ]
+                },
+                {
+                    id: 7, name: "Materials Science", weight: 25, flagship: true, isNew: false,
+                    criteria: [
+                        { id: "7.1", name: "Properties", desc: [
+                            { s: 5, l: "Excellent", t: "Highly accurate, thorough, and clinically meaningful with quantitative support." },
+                            { s: 4, l: "Good", t: "Mostly accurate and relevant with adequate detail." },
+                            { s: 3, l: "Satisfactory", t: "Somewhat accurate with basic detail only." },
+                            { s: 2, l: "Needs Improvement", t: "Inaccurate or lacking essential detail." },
+                            { s: 1, l: "Unacceptable", t: "Absent, incorrect, or severely deficient." }
+                        ]},
+                        { id: "7.2", name: "Composition", desc: [
+                            { s: 5, l: "Excellent", t: "Highly detailed composition clearly linked to material behavior." },
+                            { s: 4, l: "Good", t: "Adequate detail with some structure-property links." },
+                            { s: 3, l: "Satisfactory", t: "Basic composition mentioned, limited connections." },
+                            { s: 2, l: "Needs Improvement", t: "Superficial or missing key components." },
+                            { s: 1, l: "Unacceptable", t: "Absent or contains significant errors." }
+                        ]},
+                        { id: "7.3", name: "Comparisons", desc: [
+                            { s: 5, l: "Excellent", t: "Thorough, evidence-based comparisons with clear recommendations." },
+                            { s: 4, l: "Good", t: "Reasonable comparisons with mostly relevant criteria." },
+                            { s: 3, l: "Satisfactory", t: "Some comparison attempted, criteria basic." },
+                            { s: 2, l: "Needs Improvement", t: "Comparison unclear or poorly justified." },
+                            { s: 1, l: "Unacceptable", t: "No comparison when one was expected." }
+                        ]}
+                    ]
+                },
+                {
+                    id: 8, name: "Critical Thinking", weight: 7.5, flagship: false, isNew: true,
+                    criteria: [
+                        { id: "8.1", name: "Balanced Analysis", desc: [
+                            { s: 5, l: "Excellent", t: "Thoroughly weighs benefits and risks with evidence; acknowledges limitations." },
+                            { s: 4, l: "Good", t: "Good balance of pros and cons; recognizes key limitations." },
+                            { s: 3, l: "Satisfactory", t: "Some attempt at balance; one-sided in places." },
+                            { s: 2, l: "Needs Improvement", t: "Clearly one-sided; ignores obvious limitations." },
+                            { s: 1, l: "Unacceptable", t: "No critical analysis; uncritical acceptance of claims." }
+                        ]},
+                        { id: "8.2", name: "Creative Insight", desc: [
+                            { s: 5, l: "Excellent", t: "Offers original synthesis and insightful future directions." },
+                            { s: 4, l: "Good", t: "Shows thoughtful synthesis; identifies some future needs." },
+                            { s: 3, l: "Satisfactory", t: "Basic synthesis; limited original thinking." },
+                            { s: 2, l: "Needs Improvement", t: "Minimal synthesis; no original insights." },
+                            { s: 1, l: "Unacceptable", t: "No synthesis or creative thinking evident." }
+                        ]}
+                    ]
+                }
+            ]
+        };
+        
+        const scores = {};
+        const TOTAL = 22;
+        
+        function updateTopic() {
+            const g = document.getElementById('groupNum').value;
+            document.getElementById('topicName').value = groupTopics[g] || '';
+        }
+        
+        function init() {
+            document.getElementById('evalDate').valueAsDate = new Date();
+            render();
+        }
+        
+        function render() {
+            const main = document.getElementById('rubricMain');
+            let html = '';
+            
+            rubricData.domains.forEach(d => {
+                const wt = d.weight === 7.5 ? '7.5%' : d.weight + '%';
+                const badge = d.flagship ? `★ ${wt}` : (d.isNew ? `NEW · ${wt}` : wt);
+                
+                html += `<section class="domain">
+                    <div class="domain-header${d.flagship ? ' flagship' : ''}">
+                        <span class="domain-name">${d.name}</span>
+                        <div class="domain-meta">
+                            <span class="domain-weight">${badge}</span>
+                            <span class="domain-score" id="ds${d.id}">—</span>
+                        </div>
+                    </div>
+                    ${d.criteria.map(c => `
+                        <div class="criterion">
+                            <div class="criterion-name">${c.name}</div>
+                            <div class="descriptors">
+                                ${c.desc.map(x => `
+                                    <div class="desc desc-${x.s}" onclick="select('${c.id}',${x.s},this)">
+                                        <div class="desc-header"><span class="dot"></span>${x.l}</div>
+                                        <div class="desc-text">${x.t}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="criterion-score empty" id="cs${c.id}">—</div>
+                        </div>
+                        <div class="criterion-mobile">
+                            <div class="mobile-header" onclick="toggle(this)">
+                                <span class="mobile-name">${c.name}</span>
+                                <div class="mobile-meta">
+                                    <span class="mobile-score empty" id="ms${c.id}">—</span>
+                                    <span class="mobile-arrow">▼</span>
+                                </div>
+                            </div>
+                            <div class="mobile-options">
+                                ${c.desc.map(x => `
+                                    <div class="mobile-opt opt-${x.s}" onclick="selectMobile('${c.id}',${x.s},this)">
+                                        <span class="mobile-dot"></span>
+                                        <div class="mobile-content">
+                                            <div class="mobile-label">${x.l}</div>
+                                            <div class="mobile-text">${x.t}</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </section>`;
+            });
+            
+            html += `
+                <section class="feedback">
+                    <h3>Feedback</h3>
+                    <p>What was strongest? What one change would most improve this presentation?</p>
+                    <textarea id="feedback" placeholder="Enter feedback..."></textarea>
+                </section>
+                <div class="actions">
+                    <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+                    <button class="btn btn-secondary" onclick="window.print()">Print</button>
+                    <button class="btn btn-secondary" onclick="exportCSV()">Export CSV</button>
+                    <button class="btn btn-accent" onclick="emailResults()">Submit via Email</button>
+                    <button class="btn btn-primary" onclick="copyResults()">Copy to Clipboard</button>
+                </div>
+                <footer class="footer">
+                    <div>RSDM 5511 · Biomaterials Clinical Seminars</div>
+                    <div>The Dental College of Georgia at Augusta University</div>
+                    <div class="footer-brand">
+                        <span style="background:var(--primary)"></span>
+                        <span style="background:#a5acaf"></span>
+                        <span style="background:var(--accent)"></span>
+                    </div>
+                </footer>
+            `;
+            
+            main.innerHTML = html;
+        }
+        
+        function toggle(el) {
+            const open = el.classList.contains('open');
+            document.querySelectorAll('.mobile-header.open').forEach(h => {
+                h.classList.remove('open');
+                h.nextElementSibling.classList.remove('show');
+            });
+            if (!open) {
+                el.classList.add('open');
+                el.nextElementSibling.classList.add('show');
+            }
+        }
+        
+        function select(id, s, el) {
+            el.parentElement.querySelectorAll('.desc').forEach(d => d.classList.remove('selected'));
+            el.classList.add('selected');
+            scores[id] = s;
+            
+            const cs = document.getElementById('cs' + id);
+            cs.textContent = s;
+            cs.classList.remove('empty');
+            
+            const ms = document.getElementById('ms' + id);
+            if (ms) { ms.textContent = s; ms.classList.remove('empty'); }
+            
+            document.querySelectorAll(`.criterion-mobile .mobile-opt`).forEach(o => {
+                if (o.closest('.criterion-mobile').querySelector(`[id="ms${id}"]`)) {
+                    o.classList.remove('selected');
+                }
+            });
+            const mob = document.querySelector(`.criterion-mobile [id="ms${id}"]`)?.closest('.criterion-mobile')?.querySelector(`.opt-${s}`);
+            if (mob) mob.classList.add('selected');
+            
+            calc();
+        }
+        
+        function selectMobile(id, s, el) {
+            el.parentElement.querySelectorAll('.mobile-opt').forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+            scores[id] = s;
+            
+            const ms = document.getElementById('ms' + id);
+            ms.textContent = s;
+            ms.classList.remove('empty');
+            
+            const cs = document.getElementById('cs' + id);
+            if (cs) { cs.textContent = s; cs.classList.remove('empty'); }
+            
+            document.querySelectorAll(`.criterion .desc`).forEach(d => {
+                if (d.closest('.criterion').querySelector(`[id="cs${id}"]`)) {
+                    d.classList.remove('selected');
+                }
+            });
+            const desk = document.querySelector(`.criterion [id="cs${id}"]`)?.closest('.criterion')?.querySelector(`.desc-${s}`);
+            if (desk) desk.classList.add('selected');
+            
+            const hdr = el.closest('.criterion-mobile').querySelector('.mobile-header');
+            setTimeout(() => { hdr.classList.remove('open'); el.parentElement.classList.remove('show'); }, 120);
+            
+            calc();
+        }
+        
+        function calc() {
+            let weighted = 0, count = 0;
+            
+            rubricData.domains.forEach(d => {
+                let sum = 0, n = 0;
+                d.criteria.forEach(c => {
+                    if (scores[c.id] !== undefined) { sum += scores[c.id]; n++; count++; }
+                });
+                const el = document.getElementById('ds' + d.id);
+                if (n > 0) {
+                    const avg = sum / n;
+                    el.textContent = avg.toFixed(1);
+                    weighted += avg * (d.weight / 100);
+                } else {
+                    el.textContent = '—';
+                }
+            });
+            
+            const scoreEl = document.getElementById('finalScore');
+            const badgeEl = document.getElementById('gradeBadge');
+            
+            if (count > 0) {
+                let usedWeight = 0;
+                rubricData.domains.forEach(d => {
+                    if (d.criteria.some(c => scores[c.id] !== undefined)) usedWeight += d.weight;
+                });
+                
+                const avg5 = weighted / (usedWeight / 100);
+                const score50 = avg5 * 10;
+                scoreEl.textContent = score50.toFixed(1);
+                
+                let grade, cls;
+                if (score50 >= 45) { grade = 'Excellent'; cls = 'grade-excellent'; }
+                else if (score50 >= 35) { grade = 'Good'; cls = 'grade-good'; }
+                else if (score50 >= 25) { grade = 'Satisfactory'; cls = 'grade-satisfactory'; }
+                else if (score50 >= 15) { grade = 'Needs Improvement'; cls = 'grade-needs-improvement'; }
+                else { grade = 'Unacceptable'; cls = 'grade-unacceptable'; }
+                
+                badgeEl.textContent = grade;
+                badgeEl.className = 'grade-badge ' + cls;
+            } else {
+                scoreEl.textContent = '—';
+                badgeEl.textContent = 'Not Scored';
+                badgeEl.className = 'grade-badge';
+            }
+            
+            document.getElementById('progressCount').textContent = count;
+            document.getElementById('progressBar').style.width = (count / TOTAL * 100) + '%';
+        }
+        
+        function clearAll() {
+            if (!confirm('Clear all scores and feedback?')) return;
+            Object.keys(scores).forEach(k => delete scores[k]);
+            document.querySelectorAll('.desc, .mobile-opt').forEach(e => e.classList.remove('selected'));
+            document.querySelectorAll('.criterion-score, .mobile-score').forEach(e => { e.textContent = '—'; e.classList.add('empty'); });
+            document.getElementById('feedback').value = '';
+            document.getElementById('groupNum').value = '';
+            document.getElementById('topicName').value = '';
+            document.getElementById('evaluatorName').value = '';
+            calc();
+        }
+        
+        function copyResults() {
+            // Validation
+            const g = document.getElementById('groupNum').value;
+            const e = document.getElementById('evaluatorName').value;
+            const count = Object.keys(scores).length;
+            
+            if (!g) {
+                alert('Please select a Group number before submitting.');
+                return;
+            }
+            if (!e) {
+                alert('Please enter your name as Evaluator before submitting.');
+                return;
+            }
+            if (count < TOTAL) {
+                if (!confirm(`You have only scored ${count} of ${TOTAL} criteria. Continue anyway?`)) {
+                    return;
+                }
+            }
+            
+            const t = document.getElementById('topicName').value || '';
+            const d = document.getElementById('evalDate').value || '';
+            const f = document.getElementById('feedback').value || '';
+            const fs = document.getElementById('finalScore').textContent;
+            const gr = document.getElementById('gradeBadge').textContent;
+            
+            // Build body
+            let body = `*** AUTOMATED EVALUATION SUBMISSION ***\n`;
+            body += `Faculty: Please send this email as-is. Do not modify.\n`;
+            body += `Simply click SEND in your email client.\n`;
+            body += `================================================\n\n`;
+            
+            body += `BMCS EVALUATION RESULTS\n`;
+            body += `========================\n\n`;
+            body += `Group: ${g}\n`;
+            body += `Topic: ${t}\n`;
+            body += `Evaluator: ${e}\n`;
+            body += `Date: ${d}\n`;
+            body += `Final Score: ${fs}/50\n`;
+            body += `Grade: ${gr}\n\n`;
+            
+            body += `DOMAIN SCORES\n`;
+            body += `-------------\n`;
+            rubricData.domains.forEach(dom => {
+                const ds = document.getElementById('ds' + dom.id).textContent;
+                body += `${dom.name}: ${ds}\n`;
+            });
+            
+            body += `\nCRITERIA SCORES\n`;
+            body += `---------------\n`;
+            rubricData.domains.forEach(dom => {
+                dom.criteria.forEach(c => {
+                    const s = scores[c.id] !== undefined ? scores[c.id] : '—';
+                    body += `${c.name}: ${s}\n`;
+                });
+            });
+            
+            body += `\nFEEDBACK\n`;
+            body += `--------\n`;
+            body += f || '(none provided)';
+            
+            // Add CSV-ready line
+            body += `\n\n========================================\n`;
+            body += `CSV DATA (copy line below into Excel):\n`;
+            body += `========================================\n`;
+            
+            let csvHeader = 'Group,Topic,Evaluator,Date,';
+            let csvData = `${g},"${t}","${e}",${d},`;
+            
+            rubricData.domains.forEach(dom => {
+                dom.criteria.forEach(c => {
+                    csvHeader += `${c.id},`;
+                    csvData += `${scores[c.id] !== undefined ? scores[c.id] : ''},`;
+                });
+            });
+            
+            csvHeader += 'FinalScore,Grade';
+            csvData += `${fs},${gr}`;
+            
+            body += csvHeader + `\n`;
+            body += csvData;
+            
+            copyToClipboard(body, g, d);
+        }
+        
+        function exportCSV() {
+            const g = document.getElementById('groupNum').value || 'X';
+            const t = document.getElementById('topicName').value || '';
+            const e = document.getElementById('evaluatorName').value || '';
+            const d = document.getElementById('evalDate').value || '';
+            const f = document.getElementById('feedback').value || '';
+            const fs = document.getElementById('finalScore').textContent;
+            const gr = document.getElementById('gradeBadge').textContent;
+            
+            // Build CSV rows
+            let csv = 'Field,Value\n';
+            csv += `Group,${g}\n`;
+            csv += `Topic,"${t.replace(/"/g, '""')}"\n`;
+            csv += `Evaluator,"${e.replace(/"/g, '""')}"\n`;
+            csv += `Date,${d}\n`;
+            csv += `Final Score,${fs}\n`;
+            csv += `Grade,${gr}\n\n`;
+            
+            csv += 'Domain,Criterion,Score\n';
+            rubricData.domains.forEach(dom => {
+                dom.criteria.forEach(c => {
+                    const s = scores[c.id] !== undefined ? scores[c.id] : '';
+                    csv += `"${dom.name}","${c.name}",${s}\n`;
+                });
+            });
+            
+            csv += `\nFeedback,"${f.replace(/"/g, '""')}"\n`;
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `BMCS_Group${g}_${d || 'undated'}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function emailResults() {
+            // Validation
+            const g = document.getElementById('groupNum').value;
+            const e = document.getElementById('evaluatorName').value;
+            const count = Object.keys(scores).length;
+            
+            if (!g) {
+                alert('Please select a Group number before submitting.');
+                return;
+            }
+            if (!e) {
+                alert('Please enter your name as Evaluator before submitting.');
+                return;
+            }
+            if (count < TOTAL) {
+                if (!confirm(`You have only scored ${count} of ${TOTAL} criteria. Submit anyway?`)) {
+                    return;
+                }
+            }
+            
+            const t = document.getElementById('topicName').value || '';
+            const d = document.getElementById('evalDate').value || '';
+            const f = document.getElementById('feedback').value || '';
+            const fs = document.getElementById('finalScore').textContent;
+            const gr = document.getElementById('gradeBadge').textContent;
+            
+            // Build email body
+            let body = `*** AUTOMATED EVALUATION SUBMISSION ***\n`;
+            body += `Faculty: Please send this email as-is. Do not modify.\n`;
+            body += `Simply click SEND in your email client.\n`;
+            body += `================================================\n\n`;
+            
+            body += `BMCS EVALUATION RESULTS\n`;
+            body += `========================\n\n`;
+            body += `Group: ${g}\n`;
+            body += `Topic: ${t}\n`;
+            body += `Evaluator: ${e}\n`;
+            body += `Date: ${d}\n`;
+            body += `Final Score: ${fs}/50\n`;
+            body += `Grade: ${gr}\n\n`;
+            
+            body += `DOMAIN SCORES\n`;
+            body += `-------------\n`;
+            rubricData.domains.forEach(dom => {
+                const ds = document.getElementById('ds' + dom.id).textContent;
+                body += `${dom.name}: ${ds}\n`;
+            });
+            
+            body += `\nCRITERIA SCORES\n`;
+            body += `---------------\n`;
+            rubricData.domains.forEach(dom => {
+                dom.criteria.forEach(c => {
+                    const s = scores[c.id] !== undefined ? scores[c.id] : '—';
+                    body += `${c.name}: ${s}\n`;
+                });
+            });
+            
+            body += `\nFEEDBACK\n`;
+            body += `--------\n`;
+            body += f || '(none provided)';
+            
+            // Add CSV-ready line for easy copy/paste into spreadsheet
+            body += `\n\n========================================\n`;
+            body += `CSV DATA (copy line below into Excel):\n`;
+            body += `========================================\n`;
+            
+            // Build CSV header and data
+            let csvHeader = 'Group,Topic,Evaluator,Date,';
+            let csvData = `${g},"${t}","${e}",${d},`;
+            
+            rubricData.domains.forEach(dom => {
+                dom.criteria.forEach(c => {
+                    csvHeader += `${c.id},`;
+                    csvData += `${scores[c.id] !== undefined ? scores[c.id] : ''},`;
+                });
+            });
+            
+            csvHeader += 'FinalScore,Grade';
+            csvData += `${fs},${gr}`;
+            
+            body += csvHeader + `\n`;
+            body += csvData;
+            
+            const subject = encodeURIComponent(`[SECURE] BMCS Evaluation - Group ${g} - ${d}`);
+            const encodedBody = encodeURIComponent(body);
+            const email = 'RAPACHECO@augusta.edu';
+            
+            window.location.href = `mailto:${email}?subject=${subject}&body=${encodedBody}`;
+            
+            // Show confirmation with fallback option
+            setTimeout(() => {
+                const fallback = confirm(
+                    'Your email client should open with the evaluation.\n\n' +
+                    'Click OK to COPY the evaluation to clipboard instead\n' +
+                    '(if email did not open or you prefer to paste manually).\n\n' +
+                    'Click CANCEL if email opened successfully.'
+                );
+                if (fallback) {
+                    copyToClipboard(body, g, d);
+                }
+            }, 800);
+        }
+        
+        function copyToClipboard(body, group, date) {
+            const fullText = `TO: RAPACHECO@augusta.edu\nSUBJECT: [SECURE] BMCS Evaluation - Group ${group} - ${date}\n\n${body}`;
+            
+            navigator.clipboard.writeText(fullText).then(() => {
+                alert(
+                    '✓ Evaluation copied to clipboard!\n\n' +
+                    'Now:\n' +
+                    '1. Open your email (Outlook web, Gmail, etc.)\n' +
+                    '2. Create new email to: RAPACHECO@augusta.edu\n' +
+                    '3. Paste (Ctrl+V) into the email body\n' +
+                    '4. Send!'
+                );
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = fullText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert(
+                    '✓ Evaluation copied to clipboard!\n\n' +
+                    'Now:\n' +
+                    '1. Open your email (Outlook web, Gmail, etc.)\n' +
+                    '2. Create new email to: RAPACHECO@augusta.edu\n' +
+                    '3. Paste (Ctrl+V) into the email body\n' +
+                    '4. Send!'
+                );
+            });
+        }
+        
+        function exportJSON() {
+            const data = {
+                group: document.getElementById('groupNum').value,
+                topic: document.getElementById('topicName').value,
+                evaluator: document.getElementById('evaluatorName').value,
+                date: document.getElementById('evalDate').value,
+                scores: { ...scores },
+                domainScores: {},
+                finalScore: document.getElementById('finalScore').textContent,
+                grade: document.getElementById('gradeBadge').textContent,
+                feedback: document.getElementById('feedback').value
+            };
+            rubricData.domains.forEach(d => {
+                data.domainScores[d.name] = document.getElementById('ds' + d.id).textContent;
+            });
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `BMCS_Group${data.group || 'X'}_${data.date || 'undated'}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+
+<script>
+(function(){
+  var sel=document.getElementById('evaluatorSelect'),inp=document.getElementById('evaluatorName');
+  if(!sel||!inp)return;
+  function sync(){
+    if(sel.value==='__other__'){inp.style.display='';inp.value=(inp.dataset.custom||'');inp.focus();}
+    else {inp.style.display='none';inp.value=sel.value;}
+  }
+  sel.addEventListener('change',sync);
+  inp.addEventListener('input',function(){if(sel.value==='__other__')inp.dataset.custom=inp.value;});
+  // keep the select in sync if the form is reset elsewhere
+  var mo=new MutationObserver(function(){});
+  sync();
+})();
+</script>
+</body>
+</html>
