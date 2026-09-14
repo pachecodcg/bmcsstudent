@@ -968,6 +968,15 @@ window.BMCS_GROUPS=[
 body.dark .pdf-topic{color:var(--ink)}
 body.dark .pdf-g{background:var(--surface-card);border-color:rgba(165,172,175,0.2)}
 body.dark .pdf-g.active{color:var(--au-green)}
+
+.igr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.igr-scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.igr-s{display:flex;align-items:center;gap:8px;background:var(--surface-card);border:1px solid var(--line);padding:10px 12px}
+.igr-s b{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:800;color:var(--au-navy)}
+.igr-s em{margin-left:auto;font-style:normal;font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;color:var(--ink-soft)}
+.igr-d{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+body.dark .igr-s{background:var(--surface-card);border-color:rgba(165,172,175,.15)}
+body.dark .igr-s b{color:var(--ink)}
 </style>
 <script>
 (function(){
@@ -1097,7 +1106,7 @@ body.dark .pdf-g.active{color:var(--au-green)}
 <section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Assessment</div><div class="content-title reveal d2">What the Seminars Are <em>Worth</em></div><div class="content-body reveal d3">The course runs on 212 points. Counting the rubrics, the quizzes they generate, and Exam #4, the seminars account for <strong>93 of them</strong>.</div>
 <div class="stack reveal d4"><div class="sseg s1" style="width:23.6%">Group rubric 50</div><div class="sseg s2" style="width:4.7%">10</div><div class="sseg s3" style="width:15.6%">Quiz + Exam #4 &middot; 33</div><div class="sseg s4" style="width:56.1%">Rest of the course 119</div></div>
 <div class="legend reveal d4"><span class="lg"><i style="background:var(--au-navy)"></i>Group presentation rubric, 50 points</span><span class="lg"><i style="background:var(--au-navy-mid)"></i>Intra-group peer review, 10 points</span><span class="lg"><i style="background:var(--au-green-deep)"></i>11 quiz questions and 22 on Exam #4</span></div>
-<div class="info-grid reveal d5" style="margin-top:22px"><div class="s-info"><div class="s-info-label">Group presentation rubric</div><div class="s-info-text">The facilitator, the course director, and every attending faculty member each score you on the 2026 rubric, comments included. The next slide shows it.</div></div><div class="s-info"><div class="s-info-label">Peer review</div><div class="s-info-text">The facilitator and every group member complete the peer review rubric. Your teammates' effort is graded by the people who worked with them.</div></div></div>
+<div class="info-grid reveal d5" style="margin-top:22px"><div class="s-info"><div class="s-info-label">Group presentation rubric</div><div class="s-info-text">The facilitator, the course director, and every attending faculty member each score you on the 2026 rubric, comments included. The next slide shows it.</div></div><div class="s-info"><div class="s-info-label">Peer review</div><div class="s-info-text">You evaluate yourself and every member of your group, and your facilitator does the same. Effort is graded by the people who worked with you. Two slides ahead.</div></div></div>
 </div></section>
 
 <!-- 23B RUBRIC -->
@@ -1120,6 +1129,23 @@ body.dark .pdf-g.active{color:var(--au-green)}
 <a class="rub-ext" href="BMCS_Rubric_2026.html" target="_blank" rel="noopener">Open full size &#8599;</a>
 </div>
 </div>
+</div></section>
+
+<!-- 23C INTRAGROUP -->
+<section class="slide slide--light"><div class="chrome-top"></div><div class="event-ribbon">BMCS <span class="dot"></span> BioMaterials Clinical Seminars</div><div class="slide-inner" style="justify-content:center"><div class="slide-kicker reveal d1">Intragroup Evaluation<span class="kicker-r">Microsoft Forms &middot; anonymous &middot; 10 points</span></div><div class="content-title reveal d2" style="margin-bottom:4px">You Grade <em>Each Other</em></div><div class="content-sub reveal d2" style="margin-bottom:16px;max-width:100%">Right after your seminar, you complete one form per group member, <strong>including yourself</strong>, and your facilitator completes one for each of you. Your name is never attached to the scores you give.</div>
+<div class="igr-grid reveal d3">
+<div class="s-info"><div class="s-info-label">Criterion 1</div><div class="s-info-text">Attended and <strong>actively participated</strong> at meetings.</div></div>
+<div class="s-info"><div class="s-info-label">Criterion 2</div><div class="s-info-text">Completed assigned work <strong>on time</strong> and to group expectations.</div></div>
+<div class="s-info"><div class="s-info-label">Criterion 3</div><div class="s-info-text">Added <strong>input, enthusiasm, and clarity</strong> to the group&rsquo;s performance.</div></div>
+</div>
+<div class="igr-scale reveal d4">
+<div class="igr-s"><span class="igr-d" style="background:#1f6fd0"></span><b>High effort</b><em>5 pts</em></div>
+<div class="igr-s"><span class="igr-d" style="background:#2fa84f"></span><b>Moderate effort</b><em>4 pts</em></div>
+<div class="igr-s"><span class="igr-d" style="background:#e8c020"></span><b>Minimal effort</b><em>3 pts</em></div>
+<div class="igr-s"><span class="igr-d" style="background:#e08422"></span><b>Failing</b><em>2 pts</em></div>
+<div class="igr-s"><span class="igr-d" style="background:#cf3030"></span><b>Really failing</b><em>1 pt</em></div>
+</div>
+<div class="s-info reveal d5" style="border-left:3px solid var(--au-green);margin-top:16px"><div class="s-info-label">Why it exists</div><div class="s-info-text">Ten points of your grade come from this, and it is the one part of the seminar your classmates control. The group that meets weekly and splits the work evenly never has a problem here. <strong>Be honest, and be someone worth scoring highly.</strong></div></div>
 </div></section>
 
 <!-- 24 PUBLICATIONS -->
